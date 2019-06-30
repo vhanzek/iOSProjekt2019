@@ -1,0 +1,20 @@
+PODS:
+  - Kingfisher (4.10.1)
+  - PureLayout (3.1.4)
+
+DEPENDENCIES:
+  - Kingfisher
+  - PureLayout
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
+    - PureLayout
+
+SPEC CHECKSUMS:
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
+
+PODFILE CHECKSUM: 924341070a42a757a9bcf478700018fc1f5ca950
+
+COCOAPODS: 1.6.1
