@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		6803ACB122C8D775001899CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803ACB022C8D775001899CF /* AppDelegate.swift */; };
 		6803ACB322C8D775001899CF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803ACB222C8D775001899CF /* LoginViewController.swift */; };
-		6803ACB922C8D775001899CF /* BetterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6803ACB722C8D775001899CF /* BetterApp.xcdatamodeld */; };
 		6803ACBB22C8D777001899CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6803ACBA22C8D777001899CF /* Assets.xcassets */; };
 		6803ACCA22C8DB48001899CF /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6803ACC922C8DB48001899CF /* LoginViewController.xib */; };
+		6803ACCE22C8DD88001899CF /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803ACCD22C8DD88001899CF /* RegistrationViewController.swift */; };
+		6803ACD122C8E0A7001899CF /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803ACD022C8E0A7001899CF /* UIUtils.swift */; };
+		685B9CF022CA941A00547C32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */; };
+		685B9CF322CA9CAA00547C32 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */; };
+		685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF422CAA2A900547C32 /* HabitsViewController.swift */; };
+		688EBDDB22C902C30079C2B8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */; };
 		EF6222B2DEF3520E626EBAC0 /* Pods_BetterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,10 +25,15 @@
 		6803ACAD22C8D775001899CF /* BetterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6803ACB022C8D775001899CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6803ACB222C8D775001899CF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		6803ACB822C8D775001899CF /* BetterApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BetterApp.xcdatamodel; sourceTree = "<group>"; };
 		6803ACBA22C8D777001899CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6803ACBF22C8D777001899CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6803ACC922C8DB48001899CF /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		6803ACCD22C8DD88001899CF /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		6803ACD022C8E0A7001899CF /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
+		685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
+		685B9CF422CAA2A900547C32 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FD4399A06E954E315EC030 /* Pods-BetterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterApp.debug.xcconfig"; path = "Target Support Files/Pods-BetterApp/Pods-BetterApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +71,9 @@
 		6803ACAF22C8D775001899CF /* BetterApp */ = {
 			isa = PBXGroup;
 			children = (
+				685B9CF122CA9C5900547C32 /* Extensions */,
+				685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */,
+				6803ACCF22C8E091001899CF /* Utils */,
 				6803ACC822C8D84E001899CF /* Models */,
 				6803ACC722C8D845001899CF /* ViewModels */,
 				6803ACC622C8D7F3001899CF /* Views */,
@@ -68,7 +81,6 @@
 				6803ACB022C8D775001899CF /* AppDelegate.swift */,
 				6803ACBA22C8D777001899CF /* Assets.xcassets */,
 				6803ACBF22C8D777001899CF /* Info.plist */,
-				6803ACB722C8D775001899CF /* BetterApp.xcdatamodeld */,
 			);
 			path = BetterApp;
 			sourceTree = "<group>";
@@ -78,6 +90,9 @@
 			children = (
 				6803ACB222C8D775001899CF /* LoginViewController.swift */,
 				6803ACC922C8DB48001899CF /* LoginViewController.xib */,
+				6803ACCD22C8DD88001899CF /* RegistrationViewController.swift */,
+				688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */,
+				685B9CF422CAA2A900547C32 /* HabitsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -101,6 +116,22 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6803ACCF22C8E091001899CF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6803ACD022C8E0A7001899CF /* UIUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		685B9CF122CA9C5900547C32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8722EA3519D8198D4B8687C1 /* Pods */ = {
@@ -179,6 +210,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				688EBDDB22C902C30079C2B8 /* RegistrationViewController.xib in Resources */,
+				685B9CF022CA941A00547C32 /* GoogleService-Info.plist in Resources */,
 				6803ACCA22C8DB48001899CF /* LoginViewController.xib in Resources */,
 				6803ACBB22C8D777001899CF /* Assets.xcassets in Resources */,
 			);
@@ -218,15 +251,23 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BetterApp/Pods-BetterApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -240,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6803ACD122C8E0A7001899CF /* UIUtils.swift in Sources */,
+				685B9CF322CA9CAA00547C32 /* UIViewController+Spinner.swift in Sources */,
 				6803ACB322C8D775001899CF /* LoginViewController.swift in Sources */,
 				6803ACB122C8D775001899CF /* AppDelegate.swift in Sources */,
-				6803ACB922C8D775001899CF /* BetterApp.xcdatamodeld in Sources */,
+				6803ACCE22C8DD88001899CF /* RegistrationViewController.swift in Sources */,
+				685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +414,9 @@
 			baseConfigurationReference = D8FD4399A06E954E315EC030 /* Pods-BetterApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BetterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.ios.BetterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,7 +435,9 @@
 			baseConfigurationReference = 5BC5437BBA3AE12988489505 /* Pods-BetterApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BetterApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.ios.BetterApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,19 +473,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6803ACB722C8D775001899CF /* BetterApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6803ACB822C8D775001899CF /* BetterApp.xcdatamodel */,
-			);
-			currentVersion = 6803ACB822C8D775001899CF /* BetterApp.xcdatamodel */;
-			path = BetterApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6803ACA522C8D775001899CF /* Project object */;
 }

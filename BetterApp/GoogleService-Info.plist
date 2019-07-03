@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>168230557618-aq2sb3nqh0iaqi4kjedmiklemog0lop1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.168230557618-aq2sb3nqh0iaqi4kjedmiklemog0lop1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDWG15frb3EQaqFeM8B9ZhRjALm8jGNJ9I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>168230557618</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>hr.fer.ios.BetterApp</string>
+	<key>PROJECT_ID</key>
+	<string>better-application</string>
+	<key>STORAGE_BUCKET</key>
+	<string>better-application.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:168230557618:ios:6f68859f1555764d</string>
+	<key>DATABASE_URL</key>
+	<string>https://better-application.firebaseio.com</string>
+</dict>
+</plist>
