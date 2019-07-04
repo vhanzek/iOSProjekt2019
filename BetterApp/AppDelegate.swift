@@ -21,9 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = LoginViewController()
-        
-        window?.rootViewController = vc
+//        let vc = LoginViewController()
+//
+//        window?.rootViewController = vc
+        switchToHabitsController()
         window?.makeKeyAndVisible()
         
         return true
@@ -33,8 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = LoginViewController()
     }
     
-    func switchToHomeController() {
-        self.window?.rootViewController = HomeViewController()
+    func switchToHabitsController() {
+        let navigationViewController = UINavigationController(
+            rootViewController: HabitsViewController(viewModel: HabitsViewModel()))
+        self.window?.rootViewController = navigationViewController
     }
 }
 

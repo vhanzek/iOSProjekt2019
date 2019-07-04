@@ -16,6 +16,19 @@
 		685B9CF022CA941A00547C32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */; };
 		685B9CF322CA9CAA00547C32 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */; };
 		685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF422CAA2A900547C32 /* HabitsViewController.swift */; };
+		685B9CF722CE72E200547C32 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF622CE72E200547C32 /* HabitsViewModel.swift */; };
+		685B9CF922CE72FF00547C32 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF822CE72FF00547C32 /* HabitViewModel.swift */; };
+		685B9CFB22CE731F00547C32 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CFA22CE731F00547C32 /* HabitTableViewCell.swift */; };
+		685B9CFD22CE733100547C32 /* HabitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9CFC22CE733100547C32 /* HabitTableViewCell.xib */; };
+		685B9CFF22CE745400547C32 /* HabitsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9CFE22CE745400547C32 /* HabitsViewController.xib */; };
+		685B9D0122CE7E7100547C32 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D0022CE7E7100547C32 /* DataController.swift */; };
+		685B9D0322CE7F8000547C32 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D0222CE7F8000547C32 /* Habit.swift */; };
+		685B9D0522CE820000547C32 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D0422CE820000547C32 /* NewHabitViewController.swift */; };
+		685B9D0722CE823600547C32 /* NewHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9D0622CE823600547C32 /* NewHabitViewController.xib */; };
+		685B9D0922CE858600547C32 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D0822CE858500547C32 /* SettingsViewController.swift */; };
+		685B9D0B22CE85B000547C32 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9D0A22CE85B000547C32 /* SettingsViewController.xib */; };
+		685B9D0D22CE85F100547C32 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D0C22CE85F100547C32 /* HabitViewController.swift */; };
+		685B9D0F22CE861100547C32 /* HabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9D0E22CE861100547C32 /* HabitViewController.xib */; };
 		688EBDDB22C902C30079C2B8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */; };
 		EF6222B2DEF3520E626EBAC0 /* Pods_BetterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +46,19 @@
 		685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
 		685B9CF422CAA2A900547C32 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		685B9CF622CE72E200547C32 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		685B9CF822CE72FF00547C32 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		685B9CFA22CE731F00547C32 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+		685B9CFC22CE733100547C32 /* HabitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitTableViewCell.xib; sourceTree = "<group>"; };
+		685B9CFE22CE745400547C32 /* HabitsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitsViewController.xib; sourceTree = "<group>"; };
+		685B9D0022CE7E7100547C32 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		685B9D0222CE7F8000547C32 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		685B9D0422CE820000547C32 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
+		685B9D0622CE823600547C32 /* NewHabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewHabitViewController.xib; sourceTree = "<group>"; };
+		685B9D0822CE858500547C32 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		685B9D0A22CE85B000547C32 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		685B9D0C22CE85F100547C32 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		685B9D0E22CE861100547C32 /* HabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitViewController.xib; sourceTree = "<group>"; };
 		688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FD4399A06E954E315EC030 /* Pods-BetterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterApp.debug.xcconfig"; path = "Target Support Files/Pods-BetterApp/Pods-BetterApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +119,13 @@
 				6803ACCD22C8DD88001899CF /* RegistrationViewController.swift */,
 				688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */,
 				685B9CF422CAA2A900547C32 /* HabitsViewController.swift */,
+				685B9CFE22CE745400547C32 /* HabitsViewController.xib */,
+				685B9D0422CE820000547C32 /* NewHabitViewController.swift */,
+				685B9D0622CE823600547C32 /* NewHabitViewController.xib */,
+				685B9D0822CE858500547C32 /* SettingsViewController.swift */,
+				685B9D0A22CE85B000547C32 /* SettingsViewController.xib */,
+				685B9D0C22CE85F100547C32 /* HabitViewController.swift */,
+				685B9D0E22CE861100547C32 /* HabitViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -100,6 +133,8 @@
 		6803ACC622C8D7F3001899CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				685B9CFA22CE731F00547C32 /* HabitTableViewCell.swift */,
+				685B9CFC22CE733100547C32 /* HabitTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -107,6 +142,8 @@
 		6803ACC722C8D845001899CF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				685B9CF622CE72E200547C32 /* HabitsViewModel.swift */,
+				685B9CF822CE72FF00547C32 /* HabitViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -114,6 +151,8 @@
 		6803ACC822C8D84E001899CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				685B9D0022CE7E7100547C32 /* DataController.swift */,
+				685B9D0222CE7F8000547C32 /* Habit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,10 +249,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				685B9D0722CE823600547C32 /* NewHabitViewController.xib in Resources */,
 				688EBDDB22C902C30079C2B8 /* RegistrationViewController.xib in Resources */,
 				685B9CF022CA941A00547C32 /* GoogleService-Info.plist in Resources */,
+				685B9D0B22CE85B000547C32 /* SettingsViewController.xib in Resources */,
 				6803ACCA22C8DB48001899CF /* LoginViewController.xib in Resources */,
+				685B9CFD22CE733100547C32 /* HabitTableViewCell.xib in Resources */,
 				6803ACBB22C8D777001899CF /* Assets.xcassets in Resources */,
+				685B9CFF22CE745400547C32 /* HabitsViewController.xib in Resources */,
+				685B9D0F22CE861100547C32 /* HabitViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +326,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6803ACD122C8E0A7001899CF /* UIUtils.swift in Sources */,
+				685B9D0322CE7F8000547C32 /* Habit.swift in Sources */,
 				685B9CF322CA9CAA00547C32 /* UIViewController+Spinner.swift in Sources */,
 				6803ACB322C8D775001899CF /* LoginViewController.swift in Sources */,
+				685B9CF922CE72FF00547C32 /* HabitViewModel.swift in Sources */,
+				685B9CFB22CE731F00547C32 /* HabitTableViewCell.swift in Sources */,
 				6803ACB122C8D775001899CF /* AppDelegate.swift in Sources */,
+				685B9D0522CE820000547C32 /* NewHabitViewController.swift in Sources */,
 				6803ACCE22C8DD88001899CF /* RegistrationViewController.swift in Sources */,
+				685B9D0D22CE85F100547C32 /* HabitViewController.swift in Sources */,
+				685B9CF722CE72E200547C32 /* HabitsViewModel.swift in Sources */,
+				685B9D0922CE858600547C32 /* SettingsViewController.swift in Sources */,
+				685B9D0122CE7E7100547C32 /* DataController.swift in Sources */,
 				685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

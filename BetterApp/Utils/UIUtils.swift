@@ -37,9 +37,9 @@ class UIUtils {
         )
     }
     
-    static func switchToHomeController() {
+    static func switchToHabitsController() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.switchToHomeController()
+        appDelegate.switchToHabitsController()
     }
     
     static func switchToLoginController() {

@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
             }
             
             // Successfully logged in
-            UIUtils.switchToHomeController()
+            UIUtils.switchToHabitsController()
         }
     }
     
