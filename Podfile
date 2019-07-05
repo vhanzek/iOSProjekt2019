@@ -3,7 +3,6 @@ use_frameworks!
 
 target 'BetterApp' do
   pod 'PureLayout'
-  pod 'Kingfisher'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
