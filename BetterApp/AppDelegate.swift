@@ -14,30 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         // Firebase configuration
         FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-//        let vc = LoginViewController()
-//
-//        window?.rootViewController = vc
-        switchToHabitsController()
+        window?.rootViewController = UIUtils.getRootViewController()
         window?.makeKeyAndVisible()
         
         return true
     }
     
-    func switchToLoginController() {
-        self.window?.rootViewController = LoginViewController()
+    func setRootViewController(viewController: UIViewController) {
+        self.window?.rootViewController = viewController
     }
-    
-    func switchToHabitsController() {
-        let navigationViewController = UINavigationController(
-            rootViewController: HabitsViewController(viewModel: HabitsViewModel()))
-        self.window?.rootViewController = navigationViewController
-    }
+
 }
 

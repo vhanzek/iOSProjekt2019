@@ -7,11 +7,21 @@
 
 import FirebaseDatabase
 
+class DataConstants {
+    
+    public static let USERS = "users"
+    public static let HABITS = "habits"
+}
+
 class DataController {
     
     static let shared = DataController()
     
     private init() {}
     
-    private lazy var database = Database.database().reference()
+    public lazy var database = Database.database().reference()
+    
+    public static func saveUser(uid: String, email: String) {
+        shared.database.root.child(DataConstants.USERS).child(uid).setValue(email)
+    }
 }

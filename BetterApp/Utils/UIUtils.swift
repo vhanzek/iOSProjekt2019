@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum AlertType: String {
     
@@ -38,12 +39,21 @@ class UIUtils {
     }
     
     static func switchToHabitsController() {
+        let habitsViewController = UINavigationController(rootViewController: HabitsViewController(viewModel: HabitsViewModel()))
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.switchToHabitsController()
+        appDelegate.setRootViewController(viewController: habitsViewController)
     }
     
     static func switchToLoginController() {
+        let loginViewController = LoginViewController()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.switchToLoginController()
+        appDelegate.setRootViewController(viewController: loginViewController)
+    }
+    
+    static func getRootViewController() -> UIViewController {
+        return AuthenticationUtils.isUserLoggedIn() ?
+            UINavigationController(rootViewController:
+                HabitsViewController(viewModel: HabitsViewModel())) :
+            LoginViewController()
     }
 }

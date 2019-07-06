@@ -29,6 +29,7 @@
 		685B9D0B22CE85B000547C32 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9D0A22CE85B000547C32 /* SettingsViewController.xib */; };
 		685B9D0D22CE85F100547C32 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D0C22CE85F100547C32 /* HabitViewController.swift */; };
 		685B9D0F22CE861100547C32 /* HabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685B9D0E22CE861100547C32 /* HabitViewController.xib */; };
+		685B9D1322D0C20F00547C32 /* AuthenticationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D1222D0C20F00547C32 /* AuthenticationUtils.swift */; };
 		688EBDDB22C902C30079C2B8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */; };
 		EF6222B2DEF3520E626EBAC0 /* Pods_BetterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		685B9D0A22CE85B000547C32 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		685B9D0C22CE85F100547C32 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		685B9D0E22CE861100547C32 /* HabitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitViewController.xib; sourceTree = "<group>"; };
+		685B9D1222D0C20F00547C32 /* AuthenticationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUtils.swift; sourceTree = "<group>"; };
 		688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
 		C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FD4399A06E954E315EC030 /* Pods-BetterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterApp.debug.xcconfig"; path = "Target Support Files/Pods-BetterApp/Pods-BetterApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				6803ACD022C8E0A7001899CF /* UIUtils.swift */,
+				685B9D1222D0C20F00547C32 /* AuthenticationUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				685B9D0D22CE85F100547C32 /* HabitViewController.swift in Sources */,
 				685B9CF722CE72E200547C32 /* HabitsViewModel.swift in Sources */,
 				685B9D0922CE858600547C32 /* SettingsViewController.swift in Sources */,
+				685B9D1322D0C20F00547C32 /* AuthenticationUtils.swift in Sources */,
 				685B9D0122CE7E7100547C32 /* DataController.swift in Sources */,
 				685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */,
 			);

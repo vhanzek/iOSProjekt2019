@@ -62,6 +62,9 @@ class RegistrationViewController: UIViewController {
                 message: "User \(user.email!) successfully created.",
                 viewController: self
             ) {
+                // Save user to database
+                DataController.saveUser(uid: user.uid, email: user.email!)
+                
                 self.dismiss(animated: true, completion: nil)
             }
         }

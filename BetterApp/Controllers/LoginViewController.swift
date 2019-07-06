@@ -52,11 +52,11 @@ class LoginViewController: UIViewController {
                     message: error.localizedDescription,
                     viewController: strongSelf
                 )
-                return
+            } else {
+                // Successfully logged in
+                UIUtils.switchToHabitsController()
             }
             
-            // Successfully logged in
-            UIUtils.switchToHabitsController()
         }
     }
     
