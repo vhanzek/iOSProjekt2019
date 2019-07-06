@@ -43,11 +43,7 @@ class SettingsViewController: UIViewController {
         do {
             try Auth.auth().signOut()
         } catch let error as NSError {
-            UIUtils.showOKAlert(
-                type: AlertType.ERROR,
-                message: error.localizedDescription,
-                viewController: self
-            )
+            UIUtils.showError(message: error.localizedDescription)
         }
         UIUtils.switchToLoginController()
     }

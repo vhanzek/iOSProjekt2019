@@ -19,7 +19,7 @@ class HabitTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        habitIcon?.image = nil
+        habitIcon.image = nil
         habitTitle.text = ""
     }
     
@@ -27,8 +27,9 @@ class HabitTableViewCell: UITableViewCell {
         
     }
     
-    func setup() {
-        
+    func setup(withHabit habit: HabitCellModel) {
+        self.habitIcon.image = UIImage(named: habit.category.icon)
+        self.habitTitle.text = habit.title
     }
     
 }

@@ -32,11 +32,7 @@ class LoginViewController: UIViewController {
         
         // Show error if some fields are empty
         if email.isEmpty || password.isEmpty {
-            UIUtils.showOKAlert(
-                type: AlertType.ERROR,
-                message: "You haven't filled out all the fields.",
-                viewController: self
-            )
+            UIUtils.showError(message: "You haven't filled out all the fields.")
             return
         }
         
@@ -47,11 +43,7 @@ class LoginViewController: UIViewController {
             
             // An error occurred during logging in
             if let error = error {
-                UIUtils.showOKAlert(
-                    type: AlertType.ERROR,
-                    message: error.localizedDescription,
-                    viewController: strongSelf
-                )
+                UIUtils.showError(message: error.localizedDescription)
             } else {
                 // Successfully logged in
                 UIUtils.switchToHabitsController()

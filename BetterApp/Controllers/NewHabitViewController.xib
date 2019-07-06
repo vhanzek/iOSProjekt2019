@@ -13,10 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewHabitViewController" customModule="BetterApp" customModuleProvider="target">
             <connections>
                 <outlet property="categoriesSegmentedControl" destination="FAA-RH-Zgl" id="NZW-K1-OJB"/>
-                <outlet property="frequencySegmentrdControl" destination="bUi-AZ-n3s" id="45h-69-etg"/>
+                <outlet property="frequencySegmentedControl" destination="bUi-AZ-n3s" id="Bht-Jb-gCa"/>
                 <outlet property="newHabitNameTextField" destination="mXS-bn-3oM" id="AXa-yk-jBr"/>
+                <outlet property="numberOfTimesTextField" destination="mHk-on-pig" id="TEH-Fl-ouB"/>
                 <outlet property="repeatingContentView" destination="8Qb-8N-0zF" id="Qj5-6U-IB6"/>
-                <outlet property="repeatingLabel" destination="Gjf-iE-A2W" id="6WU-GT-L4O"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Q5C-Ug-of6"/>
             </connections>
         </placeholder>
@@ -50,30 +50,25 @@
                                 <segment title="weekly"/>
                                 <segment title="monthly"/>
                             </segments>
-                            <connections>
-                                <action selector="frequencySelected:" destination="-1" eventType="valueChanged" id="fNa-J4-9Bq"/>
-                            </connections>
                         </segmentedControl>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="zOd-jN-eV1"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-8N-0zF" userLabel="Repeating Content View">
-                    <rect key="frame" x="32" y="321" width="350" height="62.5"/>
+                    <rect key="frame" x="32" y="321" width="350" height="60.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-iE-A2W" userLabel="Repeating label">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose number of times:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-iE-A2W" userLabel="Repeating label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teG-ly-sdu" userLabel="Repeating Content View">
-                            <rect key="frame" x="0.0" y="30.5" width="350" height="32"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="32" id="k7f-op-cKG"/>
-                            </constraints>
-                            <viewLayoutGuide key="safeArea" id="YmB-Pe-P6X"/>
-                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of times" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHk-on-pig">
+                            <rect key="frame" x="0.0" y="30.5" width="350" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="G7W-RS-CGp"/>
                 </stackView>

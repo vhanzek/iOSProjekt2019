@@ -9,4 +9,10 @@ import Foundation
 
 class HabitViewModel {
     
+    private let habit: Habit?
+    
+    init(habit: Habit?) {
+        self.habit = habit
+    }
+    
 }

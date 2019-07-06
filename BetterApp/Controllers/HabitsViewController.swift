@@ -30,9 +30,9 @@ class HabitsViewController: UIViewController {
     }
     
     private func fetchData() {
-        //        viewModel!.fetchHabits {
-        //            self.refresh()
-        //        }
+        viewModel!.fetchHabits {
+            self.refresh()
+        }
     }
     
     private func setupNavigationBar() {
@@ -52,7 +52,7 @@ class HabitsViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(HabitsViewController.refresh), for: UIControl.Event.valueChanged)
         tableView.refreshControl = refreshControl
         
-        tableView.register(UINib(nibName: "QuizTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.register(UINib(nibName: "HabitTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
     }
     
     @objc func refresh() {
@@ -77,7 +77,7 @@ class HabitsViewController: UIViewController {
 extension HabitsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 104.0
+        return 64.0
     }
     
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -92,10 +92,10 @@ extension HabitsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        if let quizViewModel = self.viewModel!.quizViewModel(forIndexPath: indexPath) {
-//            let quizViewController = QuizViewController(viewModel: quizViewModel)
-//            navigationController?.pushViewController(quizViewController, animated: true)
-//        }
+        if let habitViewModel = self.viewModel!.habitViewModel(forRow: indexPath.row) {
+            let habitViewController = HabitViewController(viewModel: habitViewModel)
+            navigationController?.pushViewController(habitViewController, animated: true)
+        }
     }
     
 }
@@ -104,8 +104,8 @@ extension HabitsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //let category = Category.allCases[section]
-        //return self.viewModel!.numberOfQuizzes(category: category)
-        return 1
+        //return self.viewModel!.numberOfHabits(category: category)
+        return viewModel.numberOfHabits()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -114,14 +114,12 @@ extension HabitsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! QuizTableViewCell
-//
-//        if let quiz = self.viewModel!.quiz(forIndexPath: indexPath) {
-//            cell.setup(withQuiz: quiz)
-//            cell.delegate = self
-//        }
-//        return cell
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! HabitTableViewCell
+
+        if let habit = self.viewModel!.habit(forRow: indexPath.row) {
+            cell.setup(withHabit: habit)
+        }
+        return cell
     }
 }
     

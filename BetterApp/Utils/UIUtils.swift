@@ -18,24 +18,29 @@ enum AlertType: String {
 
 class UIUtils {
     
-    static func showAlert(title: String, message: String, actions: [UIAlertAction]?, viewController: UIViewController) {
+    static func showAlert(title: String, message: String, actions: [UIAlertAction]?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         actions?.forEach{ alertController.addAction($0) }
-        viewController.present(alertController, animated: true, completion: nil)
+        
+        let viewController = UIApplication.shared.topMostViewController()
+        viewController?.present(alertController, animated: true, completion: nil)
     }
     
-    static func showOKAlert(type: AlertType, message: String, viewController: UIViewController, completion: (() -> Void)? = nil) {
+    static func showOkAlert(type: AlertType, message: String, completion: (() -> Void)? = nil) {
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             if let completion = completion {
                 completion()
             }
         }
-        UIUtils.showAlert(
-            title: type.rawValue,
-            message: message,
-            actions: [okAction],
-            viewController: viewController
-        )
+        UIUtils.showAlert(title: type.rawValue, message: message, actions: [okAction])
+    }
+    
+    static func showError(message: String, completion: (() -> Void)? = nil) {
+        showOkAlert(type: AlertType.ERROR, message: message, completion: completion)
+    }
+    
+    static func showSuccess(message: String, completion: (() -> Void)? = nil) {
+        showOkAlert(type: AlertType.SUCCESS, message: message, completion: completion)
     }
     
     static func switchToHabitsController() {
@@ -51,11 +56,9 @@ class UIUtils {
     }
     
     static func getRootViewController() -> UIViewController {
-        return UINavigationController(rootViewController:
-            HabitsViewController(viewModel: HabitsViewModel()))
-//        return AuthenticationUtils.isUserLoggedIn() ?
-//            UINavigationController(rootViewController:
-//                HabitsViewController(viewModel: HabitsViewModel())) :
-//            LoginViewController()
+        return AuthenticationUtils.isUserLoggedIn() ?
+            UINavigationController(rootViewController:
+                HabitsViewController(viewModel: HabitsViewModel())) :
+            LoginViewController()
     }
 }

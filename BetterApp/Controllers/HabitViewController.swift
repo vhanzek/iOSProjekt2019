@@ -9,4 +9,10 @@ import UIKit
 
 class HabitViewController: UIViewController {
     
+    var viewModel: HabitViewModel!
+    
+    convenience init(viewModel: HabitViewModel) {
+        self.init()
+        self.viewModel = viewModel
+    }
 }

@@ -25,21 +25,13 @@ class RegistrationViewController: UIViewController {
         
         // Show error if some fields are empty
         if email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
-            UIUtils.showOKAlert(
-                type: AlertType.ERROR,
-                message: "You haven't filled out all the fields.",
-                viewController: self
-            )
+            UIUtils.showError(message: "You haven't filled out all the fields.")
             return
         }
         
         // Show error if passwords do not match
         if email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
-            UIUtils.showOKAlert(
-                type: AlertType.ERROR,
-                message: "Passwords don't match.",
-                viewController: self
-            )
+            UIUtils.showError(message: "Passwords don't match.")
             return
         }
         
@@ -49,22 +41,14 @@ class RegistrationViewController: UIViewController {
             self.removeSpinner()
             // An error occurred
             guard let user = authResult?.user, error == nil else {
-                UIUtils.showOKAlert(
-                    type: AlertType.ERROR,
-                    message: error!.localizedDescription,
-                    viewController: self
-                )
+                UIUtils.showError(message: error!.localizedDescription)
                 return
             }
             // User successfully created
-            UIUtils.showOKAlert(
-                type: AlertType.SUCCESS,
-                message: "User \(user.email!) successfully created.",
-                viewController: self
-            ) {
+            UIUtils.showSuccess(message: "User \(user.email!) successfully created.") {
                 // Save user to database
-                DataController.saveUser(uid: user.uid, email: user.email!)
-                
+                UserService().saveUser(userID: user.uid, email: user.email!)
+                // Return to login
                 self.dismiss(animated: true, completion: nil)
             }
         }
