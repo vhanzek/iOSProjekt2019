@@ -12,6 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewHabitViewController" customModule="BetterApp" customModuleProvider="target">
             <connections>
+                <outlet property="categoriesSegmentedControl" destination="FAA-RH-Zgl" id="NZW-K1-OJB"/>
+                <outlet property="frequencySegmentrdControl" destination="bUi-AZ-n3s" id="45h-69-etg"/>
+                <outlet property="newHabitNameTextField" destination="mXS-bn-3oM" id="AXa-yk-jBr"/>
+                <outlet property="repeatingContentView" destination="8Qb-8N-0zF" id="Qj5-6U-IB6"/>
+                <outlet property="repeatingLabel" destination="Gjf-iE-A2W" id="6WU-GT-L4O"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Q5C-Ug-of6"/>
             </connections>
         </placeholder>
@@ -19,8 +24,113 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New habit name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXS-bn-3oM" userLabel="Habit Name Text Field">
+                    <rect key="frame" x="32" y="60" width="350" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="uWh-6p-a2l"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fuq-hi-tIw" userLabel="Frequency Content View">
+                    <rect key="frame" x="32" y="214.5" width="350" height="58.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose repeating frequency:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-eQ-yhG" userLabel="Frequency Label">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-AZ-n3s" userLabel="Frequency">
+                            <rect key="frame" x="0.0" y="30.5" width="350" height="29"/>
+                            <segments>
+                                <segment title="daily"/>
+                                <segment title="weekly"/>
+                                <segment title="monthly"/>
+                            </segments>
+                            <connections>
+                                <action selector="frequencySelected:" destination="-1" eventType="valueChanged" id="fNa-J4-9Bq"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="zOd-jN-eV1"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-8N-0zF" userLabel="Repeating Content View">
+                    <rect key="frame" x="32" y="305" width="350" height="62.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-iE-A2W" userLabel="Repeating label">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teG-ly-sdu" userLabel="Repeating Content View">
+                            <rect key="frame" x="0.0" y="30.5" width="350" height="32"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="k7f-op-cKG"/>
+                            </constraints>
+                            <viewLayoutGuide key="safeArea" id="YmB-Pe-P6X"/>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="G7W-RS-CGp"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WAL-T2-PUN" userLabel="Category Content View">
+                    <rect key="frame" x="32" y="124" width="350" height="58.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVe-R5-pz0" userLabel="Category Label">
+                            <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-RH-Zgl" userLabel="Categories">
+                            <rect key="frame" x="0.0" y="30.5" width="350" height="29"/>
+                            <segments>
+                                <segment title="" image="health"/>
+                                <segment title="" image="fitness"/>
+                                <segment title="" image="self_development"/>
+                                <segment title="" image="house"/>
+                                <segment title="" image="efficiency"/>
+                                <segment title="" image="other"/>
+                            </segments>
+                            <connections>
+                                <action selector="categorySelected:" destination="-1" eventType="valueChanged" id="l1c-tX-FtT"/>
+                            </connections>
+                        </segmentedControl>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="UVe-R5-pz0" firstAttribute="centerX" secondItem="WAL-T2-PUN" secondAttribute="centerX" id="gNs-KN-VKM"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="Y86-KD-DIN"/>
+                </stackView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fuq-hi-tIw" secondAttribute="trailing" constant="32" id="3gR-o4-Ick"/>
+                <constraint firstItem="fuq-hi-tIw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="69Z-ti-t1d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mXS-bn-3oM" secondAttribute="trailing" constant="32" id="6Mr-cK-i3V"/>
+                <constraint firstItem="WAL-T2-PUN" firstAttribute="top" secondItem="mXS-bn-3oM" secondAttribute="bottom" constant="32" id="Bob-Ss-Twi"/>
+                <constraint firstItem="fuq-hi-tIw" firstAttribute="top" secondItem="WAL-T2-PUN" secondAttribute="bottom" constant="32" id="HsB-G9-fPS"/>
+                <constraint firstItem="mXS-bn-3oM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Mcf-Le-Rds"/>
+                <constraint firstItem="WAL-T2-PUN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="QlW-9g-CkT"/>
+                <constraint firstAttribute="trailing" secondItem="8Qb-8N-0zF" secondAttribute="trailing" constant="32" id="Xbe-D3-IJn"/>
+                <constraint firstItem="mXS-bn-3oM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="akt-fA-miz"/>
+                <constraint firstItem="8Qb-8N-0zF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="izs-P6-ACR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WAL-T2-PUN" secondAttribute="trailing" constant="32" id="s8w-b4-sVK"/>
+                <constraint firstItem="8Qb-8N-0zF" firstAttribute="top" secondItem="fuq-hi-tIw" secondAttribute="bottom" constant="32" id="u5h-CT-MEV"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
+    <resources>
+        <image name="efficiency" width="25" height="25"/>
+        <image name="fitness" width="25" height="25"/>
+        <image name="health" width="25" height="25"/>
+        <image name="house" width="25" height="25"/>
+        <image name="other" width="25" height="25"/>
+        <image name="self_development" width="25" height="25"/>
+    </resources>
 </document>

@@ -14,6 +14,7 @@ enum Category: String {
     case selfDevelopment = "SELF_DEVELOPMENT"
     case house = "HOUSE"
     case efficiency = "EFFICIENCY"
+    case other = "OTHER"
     
     var icon: String {
         return self.rawValue.lowercased()
