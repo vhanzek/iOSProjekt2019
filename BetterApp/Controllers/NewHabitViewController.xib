@@ -25,8 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New habit name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXS-bn-3oM" userLabel="Habit Name Text Field">
-                    <rect key="frame" x="32" y="60" width="350" height="32"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New habit name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXS-bn-3oM" userLabel="Habit Name Text Field">
+                    <rect key="frame" x="32" y="76" width="350" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="uWh-6p-a2l"/>
                     </constraints>
@@ -35,7 +35,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fuq-hi-tIw" userLabel="Frequency Content View">
-                    <rect key="frame" x="32" y="214.5" width="350" height="58.5"/>
+                    <rect key="frame" x="32" y="230.5" width="350" height="58.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose repeating frequency:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-eQ-yhG" userLabel="Frequency Label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
@@ -58,7 +58,7 @@
                     <viewLayoutGuide key="safeArea" id="zOd-jN-eV1"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-8N-0zF" userLabel="Repeating Content View">
-                    <rect key="frame" x="32" y="305" width="350" height="62.5"/>
+                    <rect key="frame" x="32" y="321" width="350" height="62.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-iE-A2W" userLabel="Repeating label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
@@ -78,7 +78,7 @@
                     <viewLayoutGuide key="safeArea" id="G7W-RS-CGp"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WAL-T2-PUN" userLabel="Category Content View">
-                    <rect key="frame" x="32" y="124" width="350" height="58.5"/>
+                    <rect key="frame" x="32" y="140" width="350" height="58.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVe-R5-pz0" userLabel="Category Label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
@@ -117,7 +117,7 @@
                 <constraint firstItem="mXS-bn-3oM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Mcf-Le-Rds"/>
                 <constraint firstItem="WAL-T2-PUN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="QlW-9g-CkT"/>
                 <constraint firstAttribute="trailing" secondItem="8Qb-8N-0zF" secondAttribute="trailing" constant="32" id="Xbe-D3-IJn"/>
-                <constraint firstItem="mXS-bn-3oM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="akt-fA-miz"/>
+                <constraint firstItem="mXS-bn-3oM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="akt-fA-miz"/>
                 <constraint firstItem="8Qb-8N-0zF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="izs-P6-ACR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WAL-T2-PUN" secondAttribute="trailing" constant="32" id="s8w-b4-sVK"/>
                 <constraint firstItem="8Qb-8N-0zF" firstAttribute="top" secondItem="fuq-hi-tIw" secondAttribute="bottom" constant="32" id="u5h-CT-MEV"/>

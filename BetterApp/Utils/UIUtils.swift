@@ -51,9 +51,11 @@ class UIUtils {
     }
     
     static func getRootViewController() -> UIViewController {
-        return AuthenticationUtils.isUserLoggedIn() ?
-            UINavigationController(rootViewController:
-                HabitsViewController(viewModel: HabitsViewModel())) :
-            LoginViewController()
+        return UINavigationController(rootViewController:
+            HabitsViewController(viewModel: HabitsViewModel()))
+//        return AuthenticationUtils.isUserLoggedIn() ?
+//            UINavigationController(rootViewController:
+//                HabitsViewController(viewModel: HabitsViewModel())) :
+//            LoginViewController()
     }
 }
