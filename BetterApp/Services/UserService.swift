@@ -44,6 +44,12 @@ class UserService {
     }
     
     func deleteAccount() {
+        FirebaseManager.shared.getCurrentUserReference().removeValue { error, _ in
+            if let error = error {
+                UIUtils.showError(message: error.localizedDescription)
+            }
+        }
+        
         if let user = AuthenticationUtils.getCurrentUser() {
             user.delete { (error) in
                 if let error = error {
