@@ -7,10 +7,15 @@
 
 import FirebaseDatabase
 
+class FirebaseConstants {
+    
+    public static let HABITS = "habits"
+    public static let USERS = "users"
+}
+
 class FirebaseManager {
     
-    public let HABITS = "habits"
-    public let USERS = "users"
+
     
     static let shared = FirebaseManager()
     
@@ -32,11 +37,11 @@ class FirebaseManager {
 extension FirebaseManager {
     
     public func getCurrentUserHabitsReference() -> DatabaseReference {
-        return getDatabaseReference(forName: HABITS)
+        return getDatabaseReference(forName: FirebaseConstants.HABITS)
     }
     
     public func createHabitAutoId() -> String? {
-        return createAutoId(forName: HABITS)
+        return createAutoId(forName: FirebaseConstants.HABITS)
     }
 }
 
@@ -44,7 +49,7 @@ extension FirebaseManager {
 extension FirebaseManager {
     
     public func getCurrentUserReference() -> DatabaseReference {
-        return getDatabaseReference(forName: USERS)
+        return getDatabaseReference(forName: FirebaseConstants.USERS)
     }
 }
 
