@@ -22,6 +22,8 @@ extension UIViewController {
         DispatchQueue.main.async {
             spinnerView.addSubview(ai)
             onView.addSubview(spinnerView)
+            spinnerView.autoCenterInSuperview()
+            ai.autoCenterInSuperview()
         }
         vSpinner = spinnerView
     }
