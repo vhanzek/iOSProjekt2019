@@ -34,6 +34,7 @@
 		685B9D1B22D0F88100547C32 /* UIApplication+TopMostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D1A22D0F88100547C32 /* UIApplication+TopMostController.swift */; };
 		685B9D1E22D10C1700547C32 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9D1D22D10C1700547C32 /* UserService.swift */; };
 		688EBDDB22C902C30079C2B8 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */; };
+		68BCC85422D236E5009498CE /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BCC85322D236E5009498CE /* FirebaseManager.swift */; };
 		EF6222B2DEF3520E626EBAC0 /* Pods_BetterApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		685B9D1A22D0F88100547C32 /* UIApplication+TopMostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopMostController.swift"; sourceTree = "<group>"; };
 		685B9D1D22D10C1700547C32 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		68BCC85322D236E5009498CE /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C770D9F668C33CDC23EF095D /* Pods_BetterApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FD4399A06E954E315EC030 /* Pods-BetterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterApp.debug.xcconfig"; path = "Target Support Files/Pods-BetterApp/Pods-BetterApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 		685B9D1722D0F60200547C32 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				68BCC85322D236E5009498CE /* FirebaseManager.swift */,
 				685B9D1522D0F5FC00547C32 /* HabitService.swift */,
 				685B9D1D22D10C1700547C32 /* UserService.swift */,
 			);
@@ -348,6 +351,7 @@
 				685B9D0922CE858600547C32 /* SettingsViewController.swift in Sources */,
 				685B9D1322D0C20F00547C32 /* AuthenticationUtils.swift in Sources */,
 				685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */,
+				68BCC85422D236E5009498CE /* FirebaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

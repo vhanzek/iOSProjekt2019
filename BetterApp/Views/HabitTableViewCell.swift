@@ -7,10 +7,22 @@
 
 import UIKit
 
+protocol HabitTableViewCellDelegate: class {
+    
+    func deleteClicked(forHabit id: String)
+}
+
 class HabitTableViewCell: UITableViewCell {
+    
+    weak var delegate: HabitTableViewCellDelegate?
+    private var id: String?
     
     @IBOutlet weak var habitIcon: UIImageView!
     @IBOutlet weak var habitTitle: UILabel!
+    
+    @IBAction func deleteTapped(_ sender: Any) {
+        self.delegate?.deleteClicked(forHabit: self.id!)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +40,7 @@ class HabitTableViewCell: UITableViewCell {
     }
     
     func setup(withHabit habit: HabitCellModel) {
+        self.id = habit.id
         self.habitIcon.image = UIImage(named: habit.category.icon)
         self.habitTitle.text = habit.title
     }

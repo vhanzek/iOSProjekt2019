@@ -29,15 +29,26 @@
                         <constraint firstAttribute="width" constant="40" id="zTf-fq-Y9Q"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hb-S4-90a">
+                    <rect key="frame" x="350" y="12" width="30" height="40"/>
+                    <state key="normal" title="X"/>
+                    <connections>
+                        <action selector="deleteTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wOQ-qb-dnr"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Nof-Nz-qaO" secondAttribute="bottom" constant="12" id="Crd-vP-85q"/>
+                <constraint firstAttribute="bottom" secondItem="8hb-S4-90a" secondAttribute="bottom" constant="12" id="INZ-XV-NSk"/>
+                <constraint firstItem="8hb-S4-90a" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="YaN-j3-80w"/>
                 <constraint firstItem="Nof-Nz-qaO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="csL-ZO-aWz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8hb-S4-90a" secondAttribute="trailing" constant="20" id="d68-62-hmh"/>
                 <constraint firstItem="Nof-Nz-qaO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="f8n-dC-w2t"/>
                 <constraint firstItem="Nof-Nz-qaO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="gzH-PM-vxk"/>
                 <constraint firstItem="loY-Zf-lcO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hjR-mQ-EUa"/>
                 <constraint firstItem="loY-Zf-lcO" firstAttribute="leading" secondItem="Nof-Nz-qaO" secondAttribute="trailing" constant="20" id="o4Y-0V-QPZ"/>
+                <constraint firstItem="8hb-S4-90a" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xyA-oX-hve"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

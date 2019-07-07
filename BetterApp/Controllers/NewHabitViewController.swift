@@ -29,11 +29,15 @@ class NewHabitViewController: UIViewController {
         let title = newHabitNameTextField.text ?? ""
         let category = Category.allCases[categoriesSegmentedControl.selectedSegmentIndex]
         let frequency = Frequency.allCases[frequencySegmentedControl.selectedSegmentIndex]
-        let repeating = numberOfTimesTextField.text ?? ""
+        let numberOfTimes = numberOfTimesTextField.text ?? ""
         
         // Check for errors
-        if title.isEmpty || repeating.isEmpty {
+        if title.isEmpty || numberOfTimes.isEmpty {
             UIUtils.showError(message: "You haven't filled out all the fields.")
+            return
+        }
+        guard let repeating = Int(numberOfTimes) else {
+            UIUtils.showError(message: "Number of times must be a number.")
             return
         }
         
@@ -48,6 +52,8 @@ class NewHabitViewController: UIViewController {
         // Save new habit to database
         HabitService().saveHabit(habitFormData: habitFormData) {
             self.navigationController?.popViewController(animated: true)
+//            let vc = UIApplication.shared.topMostViewController() as? HabitsViewController
+//            vc?.updateData()
         }
     }
 }

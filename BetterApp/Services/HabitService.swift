@@ -9,19 +9,16 @@ import FirebaseDatabase
 
 class HabitService {
     
-    private final let HABITS = "habits"
-    
     func fetchHabits(completion: @escaping (([Habit]?) -> Void)) {
-        let ref = Database.database().reference().root
-        let userID = AuthenticationUtils.getUserId()!
+        let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
         
-        ref.child(HABITS).child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+        habitsRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if let values = snapshot.value as? [String: Any] {
+            if let values = snapshot.value as? [String: NSDictionary] {
                 let habits = values.compactMap(Habit.init)
                 completion(habits)
             } else {
-                completion(nil)
+                completion([])
             }
             
         }) { (error) in
@@ -30,29 +27,35 @@ class HabitService {
     }
     
     func saveHabit(habitFormData: HabitFormData, completion: @escaping (() -> Void)) {
-        let ref = Database.database().reference().root
-        let userID = AuthenticationUtils.getUserId()!
-        guard let habitKey = ref.child(HABITS).childByAutoId().key else { return }
+        let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
+        guard let habitKey = FirebaseManager.shared.createHabitAutoId() else {
+            UIUtils.showSuccess(message: "Unable to save habit.")
+            return
+        }
         
-        ref.child(HABITS).child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            // Create habit to be saved to database
-            let habit: [String: String] = [
-                "id": habitKey,
-                "title": habitFormData.title,
-                "category": habitFormData.category,
-                "frequency": habitFormData.frequency,
-                "repeating": habitFormData.repeating
-            ]
-            // Add new habit with corresponding key
-            ref.updateChildValues(["/habits/\(userID)/\(habitKey)/": habit])
-            // Habit successfully saved
-            UIUtils.showSuccess(message: "Habit succesfully saved.") {
+        // Create habit to be saved to database
+        let habit: [String: Any] = [
+            "title": habitFormData.title,
+            "category": habitFormData.category,
+            "frequency": habitFormData.frequency,
+            "repeating": habitFormData.repeating
+        ]
+        // Add new habit with corresponding key
+        habitsRef.updateChildValues(["\(habitKey)": habit])
+        // Habit successfully saved
+        UIUtils.showSuccess(message: "Habit succesfully saved.") {
+            completion()
+        }
+    }
+    
+    func deleteHabit(habitID: String, completion: @escaping (() -> Void)) {
+        let habitRef = FirebaseManager.shared.getCurrentUserHabitsReference().child(habitID)
+        habitRef.removeValue { error, _ in
+            if let error = error {
+                UIUtils.showError(message: error.localizedDescription)
+            } else {
                 completion()
             }
-            
-        }) { (error) in
-            UIUtils.showError(message: error.localizedDescription)
         }
     }
 }

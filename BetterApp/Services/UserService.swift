@@ -13,8 +13,7 @@ class UserService {
     private final let USERS = "users"
     
     func saveUser(userID: String, email: String) {
-        let ref = Database.database().reference().root
-        ref.child(USERS).child(userID).setValue(email)
+        FirebaseManager.shared.getCurrentUserReference().setValue(email)
     }
     
     func changePassword(oldPassword: String?, newPassword: String?, confirmPassword: String?, completion: @escaping ((Error?) -> Void)) {

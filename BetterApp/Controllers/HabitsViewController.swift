@@ -24,15 +24,28 @@ class HabitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchData()
+        setupDatabase()
         setupNavigationBar()
         setupTableView()
     }
     
-    private func fetchData() {
-        viewModel!.fetchHabits {
+    func updateData() {
+        self.showSpinner(onView: self.view)
+        self.viewModel!.fetchHabits {
             self.refresh()
+            self.removeSpinner()
         }
+    }
+    
+    private func setupDatabase() {
+        // Fetch habits from server
+        updateData()
+        
+        // Observe habits
+//        FirebaseManager.shared.getCurrentUserHabitsReference().observe(.childAdded, with: { (snapshot) -> Void in
+//            print("changed")
+//            self.updateData()
+//        })
     }
     
     private func setupNavigationBar() {
@@ -43,7 +56,7 @@ class HabitsViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = UIColor.lightGray
+        tableView.backgroundColor = .lightGray
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -118,8 +131,19 @@ extension HabitsViewController: UITableViewDataSource {
 
         if let habit = self.viewModel!.habit(forRow: indexPath.row) {
             cell.setup(withHabit: habit)
+            cell.delegate = self
         }
         return cell
     }
+}
+
+extension HabitsViewController: HabitTableViewCellDelegate {
+    
+    func deleteClicked(forHabit id: String) {
+        HabitService().deleteHabit(habitID: id) {
+            self.updateData()
+        }
+    }
+    
 }
     

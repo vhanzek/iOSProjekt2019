@@ -34,9 +34,9 @@ class HabitFormData {
     var title: String
     var category: String
     var frequency: String
-    var repeating: String
+    var repeating: Int
     
-    init(title: String, category: String, frequency: String, repeating: String) {
+    init(title: String, category: String, frequency: String, repeating: Int) {
         self.title = title
         self.category = category
         self.frequency = frequency
@@ -54,9 +54,8 @@ class Habit {
     var daysDone: [Date]
     
     init?(habit: Any) {
-        if let habit = habit as? NSDictionary {
-            if let id = habit["id"] as? String,
-               let title = habit["title"] as? String,
+        if let (id, habit) = habit as? (String, NSDictionary) {
+            if let title = habit["title"] as? String,
                let category = habit["category"] as? String,
                let frequency = habit["frequency"] as? String,
                let repeating = habit["repeating"] as? Int {
