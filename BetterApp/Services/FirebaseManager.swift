@@ -15,8 +15,6 @@ class FirebaseConstants {
 
 class FirebaseManager {
     
-
-    
     static let shared = FirebaseManager()
     
     private let reference = Database.database().reference()
