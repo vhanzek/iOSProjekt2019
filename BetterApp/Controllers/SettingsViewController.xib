@@ -21,13 +21,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-2p-OBd">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-2p-OBd">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rx7-2p-OBd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="83p-eZ-odf"/>
+                <constraint firstItem="rx7-2p-OBd" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="XM8-VO-M4z"/>
+                <constraint firstItem="rx7-2p-OBd" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="baG-F7-QY2"/>
+                <constraint firstItem="rx7-2p-OBd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w3z-xC-GZo"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>

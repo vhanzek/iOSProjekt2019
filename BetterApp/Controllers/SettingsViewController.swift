@@ -30,7 +30,6 @@ class SettingsViewController: UIViewController {
         tableView.backgroundColor = UIColor.lightGray
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.separatorStyle = .none
     }
     
     private func logoutTapped() {
@@ -112,7 +111,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionHeaderView = UILabel()
-        sectionHeaderView.backgroundColor = UIColor.lightGray
+        sectionHeaderView.backgroundColor = UIColor(red: 147/255, green: 216/255, blue: 198/255, alpha: 1)
         
         switch SectionHeader.allCases[section] {
         case SectionHeader.account:
@@ -121,9 +120,18 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             sectionHeaderView.text = SectionHeader.userSettings.rawValue
         }
         
-        sectionHeaderView.font = UIFont.systemFont(ofSize: 12)
+        sectionHeaderView.textAlignment = .center
+        sectionHeaderView.font = UIFont.boldSystemFont(ofSize: 12)
 
         return sectionHeaderView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 24.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
     }
     
 }
