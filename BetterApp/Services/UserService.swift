@@ -17,9 +17,9 @@ class UserService {
         ref.child(USERS).child(userID).setValue(email)
     }
     
-    func changePassword(oldPassword: String?, newPassword: String?, confirmPassword: String?, completion: @escaping Completion) {
+    func changePassword(oldPassword: String?, newPassword: String?, confirmPassword: String?, completion: @escaping ((Error?) -> Void)) {
         if let old = oldPassword, let new = newPassword, let confirmNew = confirmPassword {
-            if (old != "" && new != "" && confirmNew != "") {
+            if (!old.isEmpty && !new.isEmpty && !confirmNew.isEmpty) {
                 if (new == confirmNew) {
                     if let email = AuthenticationUtils.getUserEmail() {
                         let credential = EmailAuthProvider.credential(withEmail: email, password: old)

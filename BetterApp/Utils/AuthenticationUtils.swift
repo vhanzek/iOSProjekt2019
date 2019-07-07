@@ -27,5 +27,5 @@ class AuthenticationUtils {
     static func isUserLoggedIn() -> Bool {
         return getCurrentUser() != nil
     }
-    
+
 }
