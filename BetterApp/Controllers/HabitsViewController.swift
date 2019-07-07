@@ -50,16 +50,16 @@ class HabitsViewController: UIViewController {
     
     private func setupNavigationBar() {
         self.navigationItem.title = "Habits"
+        self.navigationController?.navigationBar.tintColor = UIUtils.colorVistaBlue
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addHabitTapped))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"settings"), style: .plain, target: self, action: #selector(settingsTapped))
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = .lightGray
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(HabitsViewController.refresh), for: UIControl.Event.valueChanged)

@@ -111,7 +111,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionHeaderView = UILabel()
-        sectionHeaderView.backgroundColor = UIColor(red: 147/255, green: 216/255, blue: 198/255, alpha: 1)
+        sectionHeaderView.backgroundColor = UIUtils.colorVistaBlue
         
         switch SectionHeader.allCases[section] {
         case SectionHeader.account:
