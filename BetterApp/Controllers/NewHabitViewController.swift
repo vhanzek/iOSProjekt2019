@@ -52,8 +52,8 @@ class NewHabitViewController: UIViewController {
         // Save new habit to database
         HabitService().saveHabit(habitFormData: habitFormData) {
             self.navigationController?.popViewController(animated: true)
-//            let vc = UIApplication.shared.topMostViewController() as? HabitsViewController
-//            vc?.updateData()
+            let vc = UIApplication.shared.topMostViewController() as? HabitsViewController
+            vc?.updateData()
         }
     }
 }
