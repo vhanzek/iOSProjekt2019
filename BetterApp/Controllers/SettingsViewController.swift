@@ -30,16 +30,10 @@ class SettingsViewController: UIViewController {
         tableView.backgroundColor = UIColor.lightGray
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.separatorStyle = .none
-        
-//        refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action: #selector(SettingsViewController.refresh), for: UIControl.Event.valueChanged)
-//        tableView.refreshControl = refreshControl
-        
-//        tableView.register(UINib(nibName: "QuizTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+//        tableView.separatorStyle = .none
     }
     
-    @IBAction func signOutTapped(_ sender: Any) {
+    private func logoutTapped() {
         do {
             try Auth.auth().signOut()
         } catch let error as NSError {
@@ -48,14 +42,9 @@ class SettingsViewController: UIViewController {
         UIUtils.switchToLoginController()
     }
     
-    
 }
 
-extension SettingsViewController: UITableViewDelegate {
-    
-}
-
-extension SettingsViewController: UITableViewDataSource {
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return SectionHeader.allCases.count
@@ -66,22 +55,58 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
         switch SectionHeader.allCases[indexPath.section] {
         case SectionHeader.account:
             switch indexPath.row {
             case 0:
-                let cell = UITableViewCell()
-                let cellLabel = UILabel()
-                cellLabel.text = "Logout"
+                cell.textLabel?.text = "Logout"
                 return cell
             case 1:
-                return UITableViewCell()
+                cell.textLabel?.text = "Delete account"
+                return cell
             default:
-                return UITableViewCell()
+                return cell
             }
         case SectionHeader.userSettings:
-            return UITableViewCell()
-
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "Change password"
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            case 1:
+                cell.textLabel?.text = "Change e-mail"
+                cell.accessoryType = .disclosureIndicator
+                return cell
+            default:
+                return cell
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch SectionHeader.allCases[indexPath.section] {
+        case SectionHeader.account:
+            switch indexPath.row {
+            case 0:
+                logoutTapped()
+            case 1:
+                UIUtils.showCancelYesAlert(title: "Delete account", message: "Are you sure you want to delete your account?") {
+                    UserService().deleteAccount()
+                }
+            default:
+                break
+            }
+        case SectionHeader.userSettings:
+            switch indexPath.row {
+            case 0:
+                UIUtils.showChangeFieldDialog(field: "password")
+            case 1:
+                UIUtils.showChangeFieldDialog(field: "e-mail")
+            default:
+                break
+            }
         }
     }
     

@@ -6,6 +6,7 @@
 //
 
 import FirebaseDatabase
+import FirebaseAuth
 
 class UserService {
     
@@ -14,5 +15,45 @@ class UserService {
     func saveUser(userID: String, email: String) {
         let ref = Database.database().reference().root
         ref.child(USERS).child(userID).setValue(email)
+    }
+    
+    func changePassword(oldPassword: String?, newPassword: String?, confirmPassword: String?, completion: @escaping Completion) {
+        if let old = oldPassword, let new = newPassword, let confirmNew = confirmPassword {
+            if (old != "" && new != "" && confirmNew != "") {
+                if (new == confirmNew) {
+                    if let email = AuthenticationUtils.getUserEmail() {
+                        let credential = EmailAuthProvider.credential(withEmail: email, password: old)
+                        AuthenticationUtils.getCurrentUser()?.reauthenticate(with: credential, completion: { (result, error) in
+                            if error == nil {
+                                AuthenticationUtils.getCurrentUser()?.updatePassword(to: new, completion: { (e) in
+                                    completion(e)
+                                })
+                                UIUtils.showSuccess(message: "Password successfully changed!")
+                            } else {
+                                UIUtils.showError(message: "Old password is incorrect!")
+                                completion(error)
+                            }
+                        })
+                    }
+                } else {
+                    UIUtils.showError(message: "Passwords don't match!")
+                }
+            } else {
+                UIUtils.showError(message: "Field must not be empty!")
+            }
+        }
+    }
+    
+    func deleteAccount() {
+        if let user = AuthenticationUtils.getCurrentUser() {
+            user.delete { (error) in
+                if let error = error {
+                    UIUtils.showError(message: error.localizedDescription)
+                } else {
+                    UIUtils.switchToLoginController()
+                    UIUtils.showSuccess(message: "Your account has been deleted.")
+                }
+            }
+        }
     }
 }
