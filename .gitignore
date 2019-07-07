@@ -1,3 +1,10 @@
+## CocoaPods
 Pods/
-BetterApp.xcodeproj/
-BetterApp.xcworkspace/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+xcuserdata/
+
+## Workspace
+*.xcworkspace
