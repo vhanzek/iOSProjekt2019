@@ -27,6 +27,17 @@ enum Frequency: String, CaseIterable {
     case weekly = "WEEKLY"
     case monthly = "MONTHLY"
     
+    var times: String {
+        switch self {
+        case .daily:
+            return "a day"
+        case .weekly:
+            return "a week"
+        case .monthly:
+            return "a month"
+        }
+    }
+    
 }
 
 class HabitFormData {

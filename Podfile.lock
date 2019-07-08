@@ -37,6 +37,7 @@ PODS:
     - FirebaseCore (~> 6.0)
     - GoogleUtilities/Environment (~> 6.0)
     - GoogleUtilities/UserDefaults (~> 6.0)
+  - FSCalendar (2.8.0)
   - GoogleAppMeasurement (6.0.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -74,6 +75,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - FSCalendar
   - PureLayout
 
 SPEC REPOS:
@@ -85,6 +87,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FSCalendar
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
@@ -100,6 +103,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 68f8a7f50cdae542715d4e86afa37c4067217dcb
   FirebaseDatabase: f48e067716864be2b855cf716b927ef375d6cfa0
   FirebaseInstanceID: f20243a1d828e0e9a3798b995174dedc16f1b32a
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   GoogleAppMeasurement: a35a645835bae31b6bdc0576396bc23908f12a22
   GoogleUtilities: c7a0b08bda3bf808be823ed151f0e28ac6866e71
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
@@ -107,6 +111,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
 
-PODFILE CHECKSUM: 7db4e8814e0f885c2c2dec52965beec67b0646ed
+PODFILE CHECKSUM: 5d69bd00683bedf542316bfa833de0b5c64ca539
 
 COCOAPODS: 1.7.3

@@ -17,7 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loY-Zf-lcO">
-                    <rect key="frame" x="80" y="21.5" width="34" height="21"/>
+                    <rect key="frame" x="80" y="12" width="270" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="270" id="D9e-sF-Bh8"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -36,23 +39,32 @@
                         <action selector="deleteTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wOQ-qb-dnr"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRl-OX-6r6">
+                    <rect key="frame" x="80" y="36" width="270" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="loY-Zf-lcO" firstAttribute="top" secondItem="Nof-Nz-qaO" secondAttribute="top" id="2e9-bD-5rn"/>
                 <constraint firstAttribute="bottom" secondItem="Nof-Nz-qaO" secondAttribute="bottom" constant="12" id="Crd-vP-85q"/>
                 <constraint firstAttribute="bottom" secondItem="8hb-S4-90a" secondAttribute="bottom" constant="12" id="INZ-XV-NSk"/>
+                <constraint firstItem="iRl-OX-6r6" firstAttribute="leading" secondItem="loY-Zf-lcO" secondAttribute="leading" id="SLs-rT-bPa"/>
+                <constraint firstItem="iRl-OX-6r6" firstAttribute="bottom" secondItem="Nof-Nz-qaO" secondAttribute="bottom" id="YHk-KB-b70"/>
                 <constraint firstItem="8hb-S4-90a" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="YaN-j3-80w"/>
                 <constraint firstItem="Nof-Nz-qaO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="csL-ZO-aWz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8hb-S4-90a" secondAttribute="trailing" constant="20" id="d68-62-hmh"/>
-                <constraint firstItem="Nof-Nz-qaO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="f8n-dC-w2t"/>
+                <constraint firstItem="iRl-OX-6r6" firstAttribute="width" secondItem="loY-Zf-lcO" secondAttribute="width" id="dbF-Ax-iDx"/>
                 <constraint firstItem="Nof-Nz-qaO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="12" id="gzH-PM-vxk"/>
-                <constraint firstItem="loY-Zf-lcO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hjR-mQ-EUa"/>
                 <constraint firstItem="loY-Zf-lcO" firstAttribute="leading" secondItem="Nof-Nz-qaO" secondAttribute="trailing" constant="20" id="o4Y-0V-QPZ"/>
                 <constraint firstItem="8hb-S4-90a" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xyA-oX-hve"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="habitFrequency" destination="iRl-OX-6r6" id="6B6-Ey-24G"/>
                 <outlet property="habitIcon" destination="Nof-Nz-qaO" id="akB-R7-XoO"/>
                 <outlet property="habitTitle" destination="loY-Zf-lcO" id="tXY-vr-Mrr"/>
             </connections>
