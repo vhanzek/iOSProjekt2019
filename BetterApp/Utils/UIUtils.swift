@@ -16,9 +16,25 @@ enum AlertType: String {
     
 }
 
+class HabitFormData {
+    
+    var title: String
+    var category: String
+    var frequency: String
+    var repeating: Int
+    
+    init(title: String, category: String, frequency: String, repeating: Int) {
+        self.title = title
+        self.category = category
+        self.frequency = frequency
+        self.repeating = repeating
+    }
+}
+
 class UIUtils {
     
-    static let colorVistaBlue = UIColor(red: 147/255, green: 216/255, blue: 198/255, alpha: 1)
+    static let colorVistaBlue =
+        UIColor(red: 147/255, green: 216/255, blue: 198/255, alpha: 1)
     
     static func showAlert(title: String, message: String, actions: [UIAlertAction]?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -28,14 +44,9 @@ class UIUtils {
         viewController?.present(alertController, animated: true, completion: nil)
     }
     
-    static func showCancelYesAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+    static func showCancelYesAlert(title: String, message: String, completion: @escaping (() -> Void)) {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-
-        let yesAction = UIAlertAction(title: "YES", style: .default) { (_) in
-            if let completion = completion {
-                completion()
-            }
-        }
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (_) in completion() }
         
         UIUtils.showAlert(title: title, message: message, actions: [cancelAction, yesAction])
     }
@@ -57,25 +68,6 @@ class UIUtils {
         showOkAlert(type: AlertType.SUCCESS, message: message, completion: completion)
     }
     
-    static func switchToHabitsController() {
-        let habitsViewController = UINavigationController(rootViewController: HabitsViewController(viewModel: HabitsViewModel()))
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.setRootViewController(viewController: habitsViewController)
-    }
-    
-    static func switchToLoginController() {
-        let loginViewController = LoginViewController()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.setRootViewController(viewController: loginViewController)
-    }
-    
-    static func getRootViewController() -> UIViewController {
-        return AuthenticationUtils.isUserLoggedIn() ?
-            UINavigationController(rootViewController:
-                HabitsViewController(viewModel: HabitsViewModel())) :
-            LoginViewController()
-    }
-    
     static func showChangeFieldDialog(field: String) {
         let alertController = UIAlertController(title: "Change " + field, message: "Enter your old and new " + field, preferredStyle: .alert)
         
@@ -83,14 +75,14 @@ class UIUtils {
             let old = alertController.textFields?[0].text
             let new = alertController.textFields?[1].text
             let confirmNew = alertController.textFields?[2].text
-
+            
             if field == "password" {
                 UserService().changePassword(oldPassword: old, newPassword: new, confirmPassword: confirmNew, completion: { (_) in })
             }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
-    
+        
         alertController.addTextField { (textField) in
             textField.isSecureTextEntry = true
             textField.placeholder = "Enter old " + field
@@ -109,5 +101,24 @@ class UIUtils {
         
         let viewController = UIApplication.shared.topMostViewController()
         viewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    static func switchToHabitsController() {
+        let habitsViewController = UINavigationController(rootViewController: HabitsViewController(viewModel: HabitsViewModel()))
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.setRootViewController(viewController: habitsViewController)
+    }
+    
+    static func switchToLoginController() {
+        let loginViewController = LoginViewController()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.setRootViewController(viewController: loginViewController)
+    }
+    
+    static func getRootViewController() -> UIViewController {
+        return AuthenticationUtils.isUserLoggedIn() ?
+            UINavigationController(rootViewController:
+                HabitsViewController(viewModel: HabitsViewModel())) :
+            LoginViewController()
     }
 }

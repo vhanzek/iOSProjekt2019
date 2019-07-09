@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabitViewController" customModule="BetterApp" customModuleProvider="target">
             <connections>
+                <outlet property="calendar" destination="DkG-Ml-kMq" id="kgg-eL-8BH"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aFj-Z5-CgG"/>
             </connections>
         </placeholder>
@@ -19,7 +20,31 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkG-Ml-kMq" customClass="FSCalendar">
+                    <rect key="frame" x="8" y="68" width="398" height="270"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="270" id="vqk-e4-g2h"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="YES"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DkG-Ml-kMq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="5LN-p0-iSm"/>
+                <constraint firstItem="DkG-Ml-kMq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MEF-fj-kQB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DkG-Ml-kMq" secondAttribute="trailing" constant="8" id="bf2-Bu-iQa"/>
+                <constraint firstItem="DkG-Ml-kMq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="yKN-KR-Zb9"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
