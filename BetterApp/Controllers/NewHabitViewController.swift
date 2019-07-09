@@ -53,7 +53,9 @@ class NewHabitViewController: UIViewController {
         HabitService().saveHabit(habitFormData: habitFormData) {
             self.navigationController?.popViewController(animated: true)
             let vc = UIApplication.shared.topMostViewController() as? HabitsViewController
-            vc?.updateData()
+            DispatchQueue.main.async {
+                vc?.updateData()
+            }
         }
     }
 }

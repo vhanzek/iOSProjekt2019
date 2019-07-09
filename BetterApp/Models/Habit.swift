@@ -40,21 +40,6 @@ enum Frequency: String, CaseIterable {
     
 }
 
-class HabitFormData {
-    
-    var title: String
-    var category: String
-    var frequency: String
-    var repeating: Int
-    
-    init(title: String, category: String, frequency: String, repeating: Int) {
-        self.title = title
-        self.category = category
-        self.frequency = frequency
-        self.repeating = repeating
-    }
-}
-
 class Habit {
     
     var id: String
@@ -62,7 +47,7 @@ class Habit {
     var category: Category
     var frequency: Frequency
     var repeating: Int
-    var daysDone: [Date]
+    var daysDone: [Date: String]
     
     init?(habit: Any) {
         if let (id, habit) = habit as? (String, NSDictionary) {
@@ -76,7 +61,15 @@ class Habit {
                 self.category = Category(rawValue: category) ?? Category.other
                 self.frequency = Frequency(rawValue: frequency) ?? Frequency.daily
                 self.repeating = repeating
-                self.daysDone = []
+                self.daysDone = [:]
+                
+                if let daysDone = habit["days_done"] as? [String: String] {
+                    daysDone.forEach { [weak self] (dateID, date) in
+                        if let date = DateUtils.getDate(value: date) {
+                            self?.daysDone[date] = dateID
+                        }
+                    }
+                }
                 
             } else {
                 return nil

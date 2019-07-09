@@ -35,6 +35,15 @@ class HabitsViewModel {
         })
     }
     
+    public func deleteHabit(forHabit id: String, completion: @escaping (() -> Void)) {
+        UIUtils.showCancelYesAlert(
+        title: "Delete habit", message: "Are you sure you want to delete this habit?") {
+            HabitService().deleteHabit(habitID: id) {
+                completion()
+            }
+        }
+    }
+    
     public func numberOfHabits() -> Int {
         return self.habits?.count ?? 0
     }

@@ -42,10 +42,12 @@ class HabitsViewController: UIViewController {
         updateData()
         
         // Observe habits
-//        FirebaseManager.shared.getCurrentUserHabitsReference().observe(.childAdded, with: { (snapshot) -> Void in
-//            print("changed")
-//            self.updateData()
-//        })
+        FirebaseManager.shared.getCurrentUserHabitsReference().observe(.childChanged, with: { (snapshot) -> Void in
+            print("changed")
+            DispatchQueue.main.async {
+                self.updateData()
+            }
+        })
     }
     
     private func setupNavigationBar() {
@@ -140,7 +142,7 @@ extension HabitsViewController: UITableViewDataSource {
 extension HabitsViewController: HabitTableViewCellDelegate {
     
     func deleteClicked(forHabit id: String) {
-        HabitService().deleteHabit(habitID: id) {
+        viewModel.deleteHabit(forHabit: id) {
             self.updateData()
         }
     }

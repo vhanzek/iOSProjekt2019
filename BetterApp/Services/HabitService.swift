@@ -12,6 +12,7 @@ class HabitService {
     func fetchHabits(completion: @escaping (([Habit]?) -> Void)) {
         let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
         
+        // Fetch habits
         habitsRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let values = snapshot.value as? [String: NSDictionary] {
@@ -28,8 +29,9 @@ class HabitService {
     
     func saveHabit(habitFormData: HabitFormData, completion: @escaping (() -> Void)) {
         let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
+        
         guard let habitKey = FirebaseManager.shared.createHabitAutoId() else {
-            UIUtils.showSuccess(message: "Unable to save habit.")
+            UIUtils.showError(message: "Unable to save habit.")
             return
         }
         
@@ -51,6 +53,33 @@ class HabitService {
     func deleteHabit(habitID: String, completion: @escaping (() -> Void)) {
         let habitRef = FirebaseManager.shared.getCurrentUserHabitsReference().child(habitID)
         habitRef.removeValue { error, _ in
+            if let error = error {
+                UIUtils.showError(message: error.localizedDescription)
+            } else {
+                completion()
+            }
+        }
+    }
+    
+    func saveHabitDayDone(forHabit habitID: String, date: String) -> String? {
+        let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
+        let habitDaysDoneRef = habitsRef.child(habitID).child(FirebaseConstants.DAYS_DONE)
+        
+        guard let dateKey = habitDaysDoneRef.childByAutoId().key else {
+            UIUtils.showError(message: "Unable to save date.")
+            return nil
+        }
+        // Add new date with corresponding key
+        habitDaysDoneRef.updateChildValues(["\(dateKey)": date])
+        // Return date id
+        return dateKey
+    }
+    
+    func deleteHabitDayDone(forHabit habitID: String, dateID: String, completion: @escaping (() -> Void)) {
+        let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
+        let habitDayDoneRef = habitsRef.child(habitID).child(FirebaseConstants.DAYS_DONE).child(dateID)
+        
+        habitDayDoneRef.removeValue { error, _ in
             if let error = error {
                 UIUtils.showError(message: error.localizedDescription)
             } else {

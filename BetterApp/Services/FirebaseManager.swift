@@ -11,6 +11,8 @@ class FirebaseConstants {
     
     public static let HABITS = "habits"
     public static let USERS = "users"
+    
+    public static let DAYS_DONE = "days_done"
 }
 
 class FirebaseManager {
@@ -41,6 +43,7 @@ extension FirebaseManager {
     public func createHabitAutoId() -> String? {
         return createAutoId(forName: FirebaseConstants.HABITS)
     }
+    
 }
 
 // Users references
