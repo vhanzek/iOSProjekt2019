@@ -37,18 +37,21 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eg-l3-4fO">
                             <rect key="frame" x="0.0" y="48" width="311" height="30"/>
+                            <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J1h-iv-4dB">
                             <rect key="frame" x="0.0" y="94" width="311" height="30"/>
+                            <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VbD-ed-LGd">
                             <rect key="frame" x="0.0" y="140" width="311" height="30"/>
+                            <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>

@@ -12,8 +12,9 @@ enum Category: String, CaseIterable {
     case health = "HEALTH"
     case fitness = "FITNESS"
     case selfDevelopment = "SELF_DEVELOPMENT"
-    case house = "HOUSE"
+    case household = "HOUSEHOLD"
     case efficiency = "EFFICIENCY"
+    case social = "SOCIAL"
     case other = "OTHER"
     
     var icon: String {

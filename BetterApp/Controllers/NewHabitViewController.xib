@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewHabitViewController" customModule="BetterApp" customModuleProvider="target">
             <connections>
                 <outlet property="categoriesSegmentedControl" destination="FAA-RH-Zgl" id="NZW-K1-OJB"/>
+                <outlet property="categoryName" destination="ouS-Wr-dig" id="Xac-Va-hbs"/>
                 <outlet property="frequencySegmentedControl" destination="bUi-AZ-n3s" id="Bht-Jb-gCa"/>
                 <outlet property="newHabitNameTextField" destination="mXS-bn-3oM" id="AXa-yk-jBr"/>
                 <outlet property="numberOfTimesTextField" destination="mHk-on-pig" id="TEH-Fl-ouB"/>
@@ -27,6 +28,7 @@
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New habit name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXS-bn-3oM" userLabel="Habit Name Text Field">
                     <rect key="frame" x="32" y="76" width="350" height="32"/>
+                    <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="uWh-6p-a2l"/>
                     </constraints>
@@ -35,7 +37,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fuq-hi-tIw" userLabel="Frequency Content View">
-                    <rect key="frame" x="32" y="230.5" width="350" height="58.5"/>
+                    <rect key="frame" x="32" y="261" width="350" height="58.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose repeating frequency:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-eQ-yhG" userLabel="Frequency Label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
@@ -56,7 +58,7 @@
                     <viewLayoutGuide key="safeArea" id="zOd-jN-eV1"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8Qb-8N-0zF" userLabel="Repeating Content View">
-                    <rect key="frame" x="32" y="321" width="350" height="60.5"/>
+                    <rect key="frame" x="32" y="351.5" width="350" height="60.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose number of times:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-iE-A2W" userLabel="Repeating label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
@@ -66,6 +68,7 @@
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of times" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHk-on-pig">
                             <rect key="frame" x="0.0" y="30.5" width="350" height="30"/>
+                            <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -74,7 +77,7 @@
                     <viewLayoutGuide key="safeArea" id="G7W-RS-CGp"/>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WAL-T2-PUN" userLabel="Category Content View">
-                    <rect key="frame" x="32" y="140" width="350" height="58.5"/>
+                    <rect key="frame" x="32" y="140" width="350" height="89"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVe-R5-pz0" userLabel="Category Label">
                             <rect key="frame" x="0.0" y="0.0" width="350" height="14.5"/>
@@ -90,6 +93,7 @@
                                 <segment title="" image="self_development"/>
                                 <segment title="" image="house"/>
                                 <segment title="" image="efficiency"/>
+                                <segment title="" image="social"/>
                                 <segment title="" image="other"/>
                             </segments>
                             <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -97,6 +101,12 @@
                                 <action selector="categorySelected:" destination="-1" eventType="valueChanged" id="l1c-tX-FtT"/>
                             </connections>
                         </segmentedControl>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEALTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouS-Wr-dig" userLabel="Category">
+                            <rect key="frame" x="0.0" y="74.5" width="350" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
                         <constraint firstItem="UVe-R5-pz0" firstAttribute="centerX" secondItem="WAL-T2-PUN" secondAttribute="centerX" id="gNs-KN-VKM"/>
@@ -123,11 +133,12 @@
         </view>
     </objects>
     <resources>
-        <image name="efficiency" width="25" height="25"/>
-        <image name="fitness" width="25" height="25"/>
-        <image name="health" width="25" height="25"/>
-        <image name="house" width="25" height="25"/>
-        <image name="other" width="25" height="25"/>
-        <image name="self_development" width="25" height="25"/>
+        <image name="efficiency" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="fitness" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="health" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="house" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="other" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="self_development" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="social" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
 </document>

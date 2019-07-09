@@ -29,8 +29,7 @@ class HabitViewController: UIViewController {
         calendar.dataSource = self
         calendar.delegate = self
         calendar.register(FSCalendarCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        calendar.allowsMultipleSelection = true
-        
+        calendar.allowsMultipleSelection = true        
         viewModel.daysDone.forEach { calendar.select($0) }
     }
 }

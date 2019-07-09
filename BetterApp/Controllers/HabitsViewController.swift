@@ -52,7 +52,10 @@ class HabitsViewController: UIViewController {
     
     private func setupNavigationBar() {
         self.navigationItem.title = "Habits"
-        self.navigationController?.navigationBar.tintColor = UIUtils.colorVistaBlue
+        self.navigationController?.navigationBar.barTintColor = UIUtils.colorVistaBlue
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addHabitTapped))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"settings"), style: .plain, target: self, action: #selector(settingsTapped))
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

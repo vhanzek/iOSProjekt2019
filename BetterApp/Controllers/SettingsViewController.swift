@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = UIColor.lightGray
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -111,7 +111,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionHeaderView = UILabel()
-        sectionHeaderView.backgroundColor = UIUtils.colorVistaBlue
+        sectionHeaderView.backgroundColor = .white
         
         switch SectionHeader.allCases[section] {
         case SectionHeader.account:
@@ -121,6 +121,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         sectionHeaderView.textAlignment = .center
+        sectionHeaderView.textColor = UIUtils.colorVistaBlue
         sectionHeaderView.font = UIFont.boldSystemFont(ofSize: 12)
 
         return sectionHeaderView

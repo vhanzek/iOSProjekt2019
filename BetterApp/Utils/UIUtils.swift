@@ -38,6 +38,7 @@ class UIUtils {
     
     static func showAlert(title: String, message: String, actions: [UIAlertAction]?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.view.tintColor = UIUtils.colorVistaBlue
         actions?.forEach{ alertController.addAction($0) }
         
         let viewController = UIApplication.shared.topMostViewController()
@@ -70,6 +71,7 @@ class UIUtils {
     
     static func showChangeFieldDialog(field: String) {
         let alertController = UIAlertController(title: "Change " + field, message: "Enter your old and new " + field, preferredStyle: .alert)
+        alertController.view.tintColor = UIUtils.colorVistaBlue
         
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
             let old = alertController.textFields?[0].text
