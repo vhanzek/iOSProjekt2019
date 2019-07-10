@@ -12,15 +12,13 @@ struct HabitCellModel {
     let id: String
     let title: String
     let category: Category
-    let frequency: Frequency
-    let repeating: Int
+    let frequencyDescription: String
     
     init(habit: Habit) {
         self.id = habit.id
         self.title = habit.title
         self.category = habit.category
-        self.frequency = habit.frequency
-        self.repeating = habit.repeating
+        self.frequencyDescription = habit.frequencyDescription
     }
 }
 

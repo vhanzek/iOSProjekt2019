@@ -64,9 +64,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="habitFrequency" destination="iRl-OX-6r6" id="6B6-Ey-24G"/>
-                <outlet property="habitIcon" destination="Nof-Nz-qaO" id="akB-R7-XoO"/>
-                <outlet property="habitTitle" destination="loY-Zf-lcO" id="tXY-vr-Mrr"/>
+                <outlet property="categoryIcon" destination="Nof-Nz-qaO" id="CAj-LA-nww"/>
+                <outlet property="frequencyDescriptionLabel" destination="iRl-OX-6r6" id="OYc-Ic-Hwd"/>
+                <outlet property="titleLabel" destination="loY-Zf-lcO" id="79h-CX-tL9"/>
             </connections>
             <point key="canvasLocation" x="88.405797101449281" y="-147.32142857142856"/>
         </view>

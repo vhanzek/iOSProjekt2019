@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabitViewController" customModule="BetterApp" customModuleProvider="target">
             <connections>
                 <outlet property="calendar" destination="DkG-Ml-kMq" id="kgg-eL-8BH"/>
+                <outlet property="descriptionLabel" destination="fBU-zX-mF7" id="dvu-PF-MbM"/>
+                <outlet property="titleLabel" destination="rQI-Wh-b1u" id="KA3-a9-Va0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="aFj-Z5-CgG"/>
             </connections>
         </placeholder>
@@ -21,8 +23,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQI-Wh-b1u">
+                    <rect key="frame" x="188" y="68" width="38" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkG-Ml-kMq" customClass="FSCalendar">
-                    <rect key="frame" x="8" y="68" width="398" height="270"/>
+                    <rect key="frame" x="16" y="145" width="382" height="270"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="270" id="vqk-e4-g2h"/>
@@ -49,13 +57,23 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBU-zX-mF7">
+                    <rect key="frame" x="163" y="100" width="88" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="DkG-Ml-kMq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="5LN-p0-iSm"/>
+                <constraint firstItem="fBU-zX-mF7" firstAttribute="top" secondItem="rQI-Wh-b1u" secondAttribute="bottom" constant="8" id="1bk-aG-LJ1"/>
+                <constraint firstItem="rQI-Wh-b1u" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2G3-WZ-Aep"/>
+                <constraint firstItem="DkG-Ml-kMq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="5LN-p0-iSm"/>
                 <constraint firstItem="DkG-Ml-kMq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="MEF-fj-kQB"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DkG-Ml-kMq" secondAttribute="trailing" constant="8" id="bf2-Bu-iQa"/>
-                <constraint firstItem="DkG-Ml-kMq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="yKN-KR-Zb9"/>
+                <constraint firstItem="DkG-Ml-kMq" firstAttribute="top" secondItem="fBU-zX-mF7" secondAttribute="bottom" constant="24" id="O9P-Dm-dct"/>
+                <constraint firstItem="rQI-Wh-b1u" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="W4S-bk-91E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DkG-Ml-kMq" secondAttribute="trailing" constant="16" id="bf2-Bu-iQa"/>
+                <constraint firstItem="fBU-zX-mF7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e7C-P6-bxs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

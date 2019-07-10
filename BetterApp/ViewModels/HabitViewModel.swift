@@ -23,9 +23,19 @@ class HabitViewModel {
         return Array(habit?.daysDone.keys ?? [:].keys)
     }
     
+    public var title: String {
+        return habit?.title ?? ""
+    }
+    
+    public var frequencyDescription: String {
+        return habit?.frequencyDescription ?? ""
+    }
+    
     public func dayDoneId(date: Date) -> String? {
         return habit?.daysDone[date]
     }
+    
+    
     
     public func saveDayDone(date: Date) {
         guard let dateString = DateUtils.getString(date: date) else { return }

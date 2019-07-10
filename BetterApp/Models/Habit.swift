@@ -79,4 +79,10 @@ class Habit {
             return nil
         }
     }
+    
+    public var frequencyDescription: String {
+        return "\(self.repeating) time"
+                + (self.repeating == 1 ? " " : "s ")
+                + "\(self.frequency.times)"
+    }
 }

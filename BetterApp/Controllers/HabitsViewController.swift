@@ -43,7 +43,6 @@ class HabitsViewController: UIViewController {
         
         // Observe habits
         FirebaseManager.shared.getCurrentUserHabitsReference().observe(.childChanged, with: { (snapshot) -> Void in
-            print("changed")
             DispatchQueue.main.async {
                 self.updateData()
             }

@@ -56,11 +56,14 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFX-eK-9fO">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFX-eK-9fO" customClass="PrimaryButton" customModule="BetterApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="186" width="311" height="30"/>
-                            <state key="normal" title="Register">
+                            <state key="normal">
                                 <color key="titleColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Register"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="registerButtonTapped:" destination="-1" eventType="touchUpInside" id="dNL-fX-2nX"/>
                             </connections>
@@ -68,28 +71,24 @@
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="cFg-OG-t7N"/>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fga-5j-LyR">
-                    <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="ozn-46-DKa"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <state key="normal" title="Cancel">
-                        <color key="titleColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64g-x3-28A">
+                    <rect key="frame" x="329" y="26" width="30" height="42"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="×">
+                        <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
-                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="fxZ-bo-6wv"/>
+                        <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="fD7-hZ-Wds"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="6IU-7b-Vi8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="0lP-k3-SKx"/>
-                <constraint firstItem="fga-5j-LyR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="3Sq-67-Mhl"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fga-5j-LyR" secondAttribute="bottom" id="4MP-dt-0Xl"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6IU-7b-Vi8" secondAttribute="trailing" constant="32" id="75F-D4-g7a"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fga-5j-LyR" secondAttribute="trailing" id="FAu-iT-7UX"/>
                 <constraint firstItem="6IU-7b-Vi8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="Nxv-RH-UP8"/>
+                <constraint firstItem="64g-x3-28A" firstAttribute="trailing" secondItem="6IU-7b-Vi8" secondAttribute="trailing" constant="16" id="Xln-N3-NKN"/>
+                <constraint firstItem="6IU-7b-Vi8" firstAttribute="top" secondItem="64g-x3-28A" secondAttribute="bottom" constant="-16" id="weF-Jy-jme"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="131.8840579710145" y="111.83035714285714"/>

@@ -10,6 +10,8 @@ import FSCalendar
 
 class HabitViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var calendar: FSCalendar!
     
     var viewModel: HabitViewModel!
@@ -22,7 +24,15 @@ class HabitViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
         setupCalendar()
+    }
+    
+    private func setup() {
+        self.titleLabel.text = viewModel.title
+        self.descriptionLabel.text = viewModel.frequencyDescription
     }
     
     private func setupCalendar() {

@@ -17,9 +17,9 @@ class HabitTableViewCell: UITableViewCell {
     weak var delegate: HabitTableViewCellDelegate?
     private var id: String?
     
-    @IBOutlet weak var habitIcon: UIImageView!
-    @IBOutlet weak var habitTitle: UILabel!
-    @IBOutlet weak var habitFrequency: UILabel!
+    @IBOutlet weak var categoryIcon: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var frequencyDescriptionLabel: UILabel!
     
     @IBAction func deleteTapped(_ sender: Any) {
         self.delegate?.deleteClicked(forHabit: self.id!)
@@ -31,24 +31,23 @@ class HabitTableViewCell: UITableViewCell {
     }
     
     private func setupTableViewCell() {
-        habitTitle.font = UIFont.boldSystemFont(ofSize: 17.0)
-        habitFrequency.font = UIFont.systemFont(ofSize: 13.0)
-        habitFrequency.textColor = UIColor.lightGray
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+        frequencyDescriptionLabel.font = UIFont.systemFont(ofSize: 13.0)
+        frequencyDescriptionLabel.textColor = UIColor.lightGray
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        habitIcon.image = nil
-        habitTitle.text = ""
-        habitFrequency.text = ""
+        categoryIcon.image = nil
+        titleLabel.text = ""
+        frequencyDescriptionLabel.text = ""
     }
     
     func setup(withHabit habit: HabitCellModel) {
         self.id = habit.id
-        self.habitIcon.image = UIImage(named: habit.category.icon)
-        self.habitTitle.text = habit.title
-        self.habitFrequency.text = "\(habit.repeating) time" +
-            (habit.repeating == 1 ? " " : "s ") + "\(habit.frequency.times)"
+        self.categoryIcon.image = UIImage(named: habit.category.icon)
+        self.titleLabel.text = habit.title
+        self.frequencyDescriptionLabel.text = habit.frequencyDescription
     }
     
 }

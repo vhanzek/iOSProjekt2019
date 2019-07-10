@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signInButton: PrimaryButton!
     @IBOutlet weak var signUpView: UIStackView!
     
     override func viewDidLoad() {
