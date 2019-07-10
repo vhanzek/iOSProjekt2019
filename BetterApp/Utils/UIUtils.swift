@@ -35,6 +35,7 @@ class UIUtils {
     
     static let colorVistaBlue =
         UIColor(red: 147/255, green: 216/255, blue: 198/255, alpha: 1)
+    static let colorTungsten = UIColor(red: 66/255, green: 66/255, blue: 66/255, alpha: 1)
     
     static func showAlert(title: String, message: String, actions: [UIAlertAction]?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

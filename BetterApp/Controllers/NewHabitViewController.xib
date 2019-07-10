@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="1F9-Cw-N0i" userLabel="Content View">
-                    <rect key="frame" x="16" y="60" width="382" height="322.5"/>
+                    <rect key="frame" x="16" y="60" width="382" height="306.5"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New habit name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mXS-bn-3oM" userLabel="Habit Name Text Field">
                             <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
@@ -35,8 +35,8 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="uWh-6p-a2l"/>
                             </constraints>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joN-1z-3aM">
@@ -48,7 +48,7 @@
                             <viewLayoutGuide key="safeArea" id="79C-Bc-OlX"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WAL-T2-PUN" userLabel="Category Content View">
-                            <rect key="frame" x="0.0" y="81" width="382" height="89"/>
+                            <rect key="frame" x="0.0" y="81" width="382" height="81"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a category:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVe-R5-pz0" userLabel="Category Label">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="14.5"/>
@@ -56,28 +56,34 @@
                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-RH-Zgl" userLabel="Categories">
-                                    <rect key="frame" x="0.0" y="30.5" width="382" height="29"/>
-                                    <segments>
-                                        <segment title="" image="health"/>
-                                        <segment title="" image="fitness"/>
-                                        <segment title="" image="self_development"/>
-                                        <segment title="" image="house"/>
-                                        <segment title="" image="efficiency"/>
-                                        <segment title="" image="social"/>
-                                        <segment title="" image="other"/>
-                                    </segments>
-                                    <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <connections>
-                                        <action selector="categorySelected:" destination="-1" eventType="valueChanged" id="l1c-tX-FtT"/>
-                                    </connections>
-                                </segmentedControl>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEALTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouS-Wr-dig" userLabel="Category">
-                                    <rect key="frame" x="0.0" y="74.5" width="382" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5OP-QN-VhP">
+                                    <rect key="frame" x="0.0" y="30.5" width="382" height="50.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HEALTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouS-Wr-dig" userLabel="Category">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FAA-RH-Zgl" userLabel="Categories">
+                                            <rect key="frame" x="0.0" y="22.5" width="382" height="29"/>
+                                            <segments>
+                                                <segment title="" image="health"/>
+                                                <segment title="" image="fitness"/>
+                                                <segment title="" image="self_development"/>
+                                                <segment title="" image="house"/>
+                                                <segment title="" image="efficiency"/>
+                                                <segment title="" image="social"/>
+                                                <segment title="" image="other"/>
+                                            </segments>
+                                            <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="categorySelected:" destination="-1" eventType="valueChanged" id="l1c-tX-FtT"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <viewLayoutGuide key="safeArea" id="voj-oD-LHl"/>
+                                </stackView>
                             </subviews>
                             <constraints>
                                 <constraint firstItem="UVe-R5-pz0" firstAttribute="centerX" secondItem="WAL-T2-PUN" secondAttribute="centerX" id="gNs-KN-VKM"/>
@@ -85,7 +91,7 @@
                             <viewLayoutGuide key="safeArea" id="Y86-KD-DIN"/>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fT-oJ-HUC">
-                            <rect key="frame" x="0.0" y="194" width="382" height="1"/>
+                            <rect key="frame" x="0.0" y="186" width="382" height="1"/>
                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="GVB-ag-Kgc"/>
@@ -93,7 +99,7 @@
                             <viewLayoutGuide key="safeArea" id="miA-Gr-R74"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fuq-hi-tIw" userLabel="Frequency Content View">
-                            <rect key="frame" x="0.0" y="219" width="382" height="103.5"/>
+                            <rect key="frame" x="0.0" y="211" width="382" height="95.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose repeating frequency:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jn-eQ-yhG" userLabel="Frequency Label">
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="14.5"/>
@@ -101,36 +107,42 @@
                                     <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-AZ-n3s" userLabel="Frequency">
-                                    <rect key="frame" x="0.0" y="30.5" width="382" height="29"/>
-                                    <segments>
-                                        <segment title="daily"/>
-                                        <segment title="weekly"/>
-                                        <segment title="monthly"/>
-                                    </segments>
-                                    <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    <connections>
-                                        <action selector="frequencySelected:" destination="-1" eventType="valueChanged" id="9j4-TR-WZQ"/>
-                                    </connections>
-                                </segmentedControl>
-                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWa-2W-tu0">
-                                    <rect key="frame" x="0.0" y="74.5" width="382" height="29"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cNo-G6-Hzv">
+                                    <rect key="frame" x="0.0" y="30.5" width="382" height="65"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat 1 time a day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jL-rn-lBQ" userLabel="Repeating">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="rrC-pG-Pv6">
-                                            <rect key="frame" x="288" y="0.0" width="94" height="29"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bUi-AZ-n3s" userLabel="Frequency">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="29"/>
+                                            <segments>
+                                                <segment title="daily"/>
+                                                <segment title="weekly"/>
+                                                <segment title="monthly"/>
+                                            </segments>
                                             <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <connections>
-                                                <action selector="stepperTapped:" destination="-1" eventType="valueChanged" id="fx7-UK-4uF"/>
+                                                <action selector="frequencySelected:" destination="-1" eventType="valueChanged" id="9j4-TR-WZQ"/>
                                             </connections>
-                                        </stepper>
+                                        </segmentedControl>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWa-2W-tu0">
+                                            <rect key="frame" x="0.0" y="36" width="382" height="29"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat 1 time a day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jL-rn-lBQ" userLabel="Repeating">
+                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="rrC-pG-Pv6">
+                                                    <rect key="frame" x="288" y="0.0" width="94" height="29"/>
+                                                    <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <connections>
+                                                        <action selector="stepperTapped:" destination="-1" eventType="valueChanged" id="fx7-UK-4uF"/>
+                                                    </connections>
+                                                </stepper>
+                                            </subviews>
+                                            <viewLayoutGuide key="safeArea" id="wtB-yA-BGy"/>
+                                        </stackView>
                                     </subviews>
-                                    <viewLayoutGuide key="safeArea" id="wtB-yA-BGy"/>
+                                    <viewLayoutGuide key="safeArea" id="jgK-Hg-PF3"/>
                                 </stackView>
                             </subviews>
                             <viewLayoutGuide key="safeArea" id="zOd-jN-eV1"/>

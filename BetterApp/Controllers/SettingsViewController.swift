@@ -55,6 +55,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        cell.textLabel?.textColor = UIUtils.colorTungsten
         switch SectionHeader.allCases[indexPath.section] {
         case SectionHeader.account:
             switch indexPath.row {
@@ -110,29 +111,30 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionHeaderView = UILabel()
-        sectionHeaderView.backgroundColor = .white
-        
-        switch SectionHeader.allCases[section] {
-        case SectionHeader.account:
-            sectionHeaderView.text = SectionHeader.account.rawValue
-        case SectionHeader.userSettings:
-            sectionHeaderView.text = SectionHeader.userSettings.rawValue
-        }
-        
-        sectionHeaderView.textAlignment = .center
-        sectionHeaderView.textColor = UIUtils.colorVistaBlue
-        sectionHeaderView.font = UIFont.boldSystemFont(ofSize: 12)
-
-        return sectionHeaderView
+//        let sectionHeaderView = UILabel()
+//        sectionHeaderView.backgroundColor = .white
+//
+//        switch SectionHeader.allCases[section] {
+//        case SectionHeader.account:
+//            sectionHeaderView.text = SectionHeader.account.rawValue
+//        case SectionHeader.userSettings:
+//            sectionHeaderView.text = SectionHeader.userSettings.rawValue
+//        }
+//
+//        sectionHeaderView.textAlignment = .center
+//        sectionHeaderView.textColor = UIUtils.colorVistaBlue
+//        sectionHeaderView.font = UIFont.boldSystemFont(ofSize: 12)
+//
+//        return sectionHeaderView
+        return SettingsSectionHeader(title: SectionHeader.allCases[section].rawValue)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 24.0
+        return 20.0
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
+        return 20.0
     }
     
 }

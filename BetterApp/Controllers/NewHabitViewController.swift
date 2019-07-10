@@ -13,7 +13,6 @@ class NewHabitViewController: UIViewController {
     @IBOutlet weak var newHabitNameTextField: UITextField!
     @IBOutlet weak var categoriesSegmentedControl: UISegmentedControl!
     @IBOutlet weak var frequencySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var numberOfTimesTextField: UITextField!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var repeatingLabel: UILabel!
     @IBOutlet weak var repeatingStepper: UIStepper!
@@ -65,7 +64,7 @@ class NewHabitViewController: UIViewController {
     }
     
     @IBAction func categorySelected(_ sender: Any) {
-        categoryName.text = Category.allCases[categoriesSegmentedControl.selectedSegmentIndex].rawValue
+        categoryName.text = Category.allCases[categoriesSegmentedControl.selectedSegmentIndex].name
     }
     
     override func viewDidLoad() {
@@ -78,7 +77,8 @@ class NewHabitViewController: UIViewController {
         let title = newHabitNameTextField.text ?? ""
         let category = Category.allCases[categoriesSegmentedControl.selectedSegmentIndex]
         let frequency = Frequency.allCases[frequencySegmentedControl.selectedSegmentIndex]
-        let numberOfTimes = numberOfTimesTextField.text ?? ""
+        let numberOfTimes = String(format:"%.0f", repeatingStepper.value)
+
         
         // Check for errors
         if title.isEmpty || numberOfTimes.isEmpty {
