@@ -36,9 +36,9 @@ class RegistrationViewController: UIViewController {
         }
         
         // Creating Firebase user
-        self.showSpinner(onView: self.view)
+        Spinner.start()
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            self.removeSpinner()
+            Spinner.stop()
             // An error occurred
             guard let user = authResult?.user, error == nil else {
                 UIUtils.showError(message: error!.localizedDescription)

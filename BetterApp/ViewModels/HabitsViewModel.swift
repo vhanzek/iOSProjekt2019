@@ -36,7 +36,7 @@ class HabitsViewModel {
     }
     
     public func deleteHabit(forHabit id: String, completion: @escaping (() -> Void)) {
-        UIUtils.showCancelYesAlert(
+        UIUtils.showYesCancelAlert(
         title: "Delete habit", message: "Are you sure you want to delete this habit?") {
             HabitService().deleteHabit(habitID: id) {
                 completion()

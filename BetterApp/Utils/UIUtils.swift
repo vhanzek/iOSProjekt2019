@@ -45,11 +45,11 @@ class UIUtils {
         viewController?.present(alertController, animated: true, completion: nil)
     }
     
-    static func showCancelYesAlert(title: String, message: String, completion: @escaping (() -> Void)) {
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+    static func showYesCancelAlert(title: String, message: String, completion: @escaping (() -> Void)) {
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (_) in completion() }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         
-        UIUtils.showAlert(title: title, message: message, actions: [cancelAction, yesAction])
+        UIUtils.showAlert(title: title, message: message, actions: [yesAction, cancelAction])
     }
     
     static func showOkAlert(type: AlertType, message: String, completion: (() -> Void)? = nil) {
@@ -121,6 +121,6 @@ class UIUtils {
         return AuthenticationUtils.isUserLoggedIn() ?
             UINavigationController(rootViewController:
                 HabitsViewController(viewModel: HabitsViewModel())) :
-            LoginViewController()
+                LoginViewController()
     }
 }

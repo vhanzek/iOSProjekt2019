@@ -91,7 +91,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 logoutTapped()
             case 1:
-                UIUtils.showCancelYesAlert(title: "Delete account", message: "Are you sure you want to delete your account?") {
+                UIUtils.showYesCancelAlert(title: "Delete account", message: "Are you sure you want to delete your account?") {
                     UserService().deleteAccount()
                 }
             default:

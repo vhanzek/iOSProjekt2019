@@ -30,10 +30,10 @@ class HabitsViewController: UIViewController {
     }
     
     func updateData() {
-        self.showSpinner(onView: self.view)
+        Spinner.start()
         self.viewModel!.fetchHabits {
             self.refresh()
-            self.removeSpinner()
+            Spinner.stop()
         }
     }
     

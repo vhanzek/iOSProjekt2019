@@ -36,11 +36,9 @@ class LoginViewController: UIViewController {
             return
         }
         
-        self.showSpinner(onView: self.view)
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
-            guard let strongSelf = self else { return }
-            strongSelf.removeSpinner()
-            
+        Spinner.start()
+        Auth.auth().signIn(withEmail: email, password: password) { user, error in
+            Spinner.stop()
             // An error occurred during logging in
             if let error = error {
                 UIUtils.showError(message: error.localizedDescription)
