@@ -9,6 +9,7 @@ import UIKit
 
 class HabitsViewController: UIViewController {
     
+    @IBOutlet weak var tablePreview: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
     private var viewModel: HabitsViewModel!
@@ -16,7 +17,14 @@ class HabitsViewController: UIViewController {
     private let cellReuseIdentifier = "cellReuseIdentifier"
     private var refreshControl: UIRefreshControl!
     
-    private let showAll = true
+    private var showAll: Bool {
+        get {
+            return tablePreview.selectedSegmentIndex == 0
+        }
+        set {
+            self.refresh()
+        }
+    }
     
     convenience init(viewModel: HabitsViewModel) {
         self.init()
@@ -54,7 +62,7 @@ class HabitsViewController: UIViewController {
     private func setupNavigationBar() {
         self.navigationItem.title = "Habits"
         self.navigationController?.navigationBar.barTintColor = UIUtils.colorVistaBlue
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addHabitTapped))
@@ -81,6 +89,10 @@ class HabitsViewController: UIViewController {
         }
     }
     
+    @IBAction func tablePreviewChanged(_ sender: UISegmentedControl) {
+        self.showAll = sender.selectedSegmentIndex == 0
+    }
+    
     @objc func addHabitTapped() {
         let newHabitViewController = NewHabitViewController()
         self.navigationController?.pushViewController(newHabitViewController, animated: true)
@@ -99,17 +111,20 @@ extension HabitsViewController: UITableViewDelegate {
         return 64.0
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let category = Category.allCases[section]
-//        return QuizzesTableSectionHeader(title: category.rawValue, color: category.color)
-//    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return showAll ? "" : viewModel!.currentCategories[section].rawValue
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if !showAll {
+            let category = viewModel!.currentCategories[section]
+            return TableSectionHeader(title: category.name)
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32.0
+        return 24.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 24.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

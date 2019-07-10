@@ -15,8 +15,8 @@ protocol HabitTableViewCellDelegate: class {
 class HabitTableViewCell: UITableViewCell {
     
     weak var delegate: HabitTableViewCellDelegate?
-    private var id: String?
     
+    private var id: String?
     @IBOutlet weak var categoryIcon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var frequencyDescriptionLabel: UILabel!

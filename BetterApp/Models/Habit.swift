@@ -20,6 +20,10 @@ enum Category: String, CaseIterable {
     var icon: String {
         return self.rawValue.lowercased()
     }
+    
+    var name: String {
+        return self.rawValue.replacingOccurrences(of: "_", with: " ")
+    }
 }
 
 enum Frequency: String, CaseIterable {

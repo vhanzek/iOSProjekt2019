@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabitsViewController" customModule="BetterApp" customModuleProvider="target">
             <connections>
+                <outlet property="tablePreview" destination="rlA-YO-HxO" id="ogf-pO-ss9"/>
                 <outlet property="tableView" destination="bdr-B5-mzg" id="gZ0-jL-UB2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="7WO-NM-pwb"/>
             </connections>
@@ -22,17 +23,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-B5-mzg">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="101" width="414" height="795"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                 </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="rlA-YO-HxO">
+                    <rect key="frame" x="126.5" y="60" width="161" height="26"/>
+                    <segments>
+                        <segment title="All"/>
+                        <segment title="Categories"/>
+                    </segments>
+                    <color key="tintColor" red="0.63702183960000003" green="0.8401312232" blue="0.78038811679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <connections>
+                        <action selector="tablePreviewChanged:" destination="-1" eventType="valueChanged" id="Tai-pM-16I"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="bdr-B5-mzg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="57" id="0QV-gV-9uf"/>
                 <constraint firstItem="bdr-B5-mzg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0kz-25-Ryl"/>
+                <constraint firstItem="bdr-B5-mzg" firstAttribute="top" secondItem="rlA-YO-HxO" secondAttribute="bottom" constant="16" id="TtU-2i-aOZ"/>
                 <constraint firstAttribute="bottom" secondItem="bdr-B5-mzg" secondAttribute="bottom" id="g8C-pI-fp7"/>
-                <constraint firstItem="bdr-B5-mzg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jQK-Ni-5Mm"/>
                 <constraint firstItem="bdr-B5-mzg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m0S-Qc-Ecw"/>
+                <constraint firstItem="rlA-YO-HxO" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="nIB-XG-Ya4"/>
+                <constraint firstItem="rlA-YO-HxO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ueH-pL-7VI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
