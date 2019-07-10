@@ -13,7 +13,7 @@ class HabitService {
         let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
         
         // Fetch habits
-        habitsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        habitsRef.queryOrdered(byChild: "timestamp").observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let values = snapshot.value as? [String: NSDictionary] {
                 let habits = values.compactMap(Habit.init)
@@ -40,7 +40,8 @@ class HabitService {
             "title": habitFormData.title,
             "category": habitFormData.category,
             "frequency": habitFormData.frequency,
-            "repeating": habitFormData.repeating
+            "repeating": habitFormData.repeating,
+            "timestamp": ServerValue.timestamp()
         ]
         // Add new habit with corresponding key
         habitsRef.updateChildValues(["\(habitKey)": habit])

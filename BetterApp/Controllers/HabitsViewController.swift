@@ -16,6 +16,8 @@ class HabitsViewController: UIViewController {
     private let cellReuseIdentifier = "cellReuseIdentifier"
     private var refreshControl: UIRefreshControl!
     
+    private let showAll = true
+    
     convenience init(viewModel: HabitsViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -102,6 +104,10 @@ extension HabitsViewController: UITableViewDelegate {
 //        return QuizzesTableSectionHeader(title: category.rawValue, color: category.color)
 //    }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return showAll ? "" : viewModel!.currentCategories[section].rawValue
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 32.0
     }
@@ -109,7 +115,7 @@ extension HabitsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if let habitViewModel = self.viewModel!.habitViewModel(forRow: indexPath.row) {
+        if let habitViewModel = self.viewModel!.habitViewModel(forIndexPath: indexPath, showAll: showAll) {
             let habitViewController = HabitViewController(viewModel: habitViewModel)
             navigationController?.pushViewController(habitViewController, animated: true)
         }
@@ -120,20 +126,18 @@ extension HabitsViewController: UITableViewDelegate {
 extension HabitsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let category = Category.allCases[section]
-        //return self.viewModel!.numberOfHabits(category: category)
-        return viewModel.numberOfHabits()
+        return showAll ? viewModel!.numberOfHabits() : viewModel!.numberOfHabits(section: section)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         //return Category.allCases.count
-        return 1
+        return showAll ? 1 : viewModel!.currentCategories.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! HabitTableViewCell
-
-        if let habit = self.viewModel!.habit(forRow: indexPath.row) {
+        
+        if let habit = self.viewModel!.habit(forIndexPath: indexPath, showAll: showAll) {
             cell.setup(withHabit: habit)
             cell.delegate = self
         }
@@ -144,9 +148,15 @@ extension HabitsViewController: UITableViewDataSource {
 extension HabitsViewController: HabitTableViewCellDelegate {
     
     func deleteClicked(forHabit id: String) {
-        viewModel.deleteHabit(forHabit: id) {
-            self.updateData()
+        UIUtils.showYesCancelAlert(title: "Delete habit",
+                                   message: "Are you sure you want to delete this habit?") {
+            Spinner.start()
+            self.viewModel.deleteHabit(forHabit: id) {
+                self.updateData()
+                Spinner.stop()
+            }
         }
+        
     }
     
 }

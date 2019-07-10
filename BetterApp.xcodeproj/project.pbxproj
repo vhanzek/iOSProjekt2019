@@ -15,8 +15,10 @@
 		6803ACD122C8E0A7001899CF /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6803ACD022C8E0A7001899CF /* UIUtils.swift */; };
 		680F79C022D26E1800C4C589 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 680F79BF22D26E1700C4C589 /* Launch Screen.storyboard */; };
 		680F79C422D4D24D00C4C589 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C322D4D24D00C4C589 /* DateUtils.swift */; };
+		680F79C622D5DC5200C4C589 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C522D5DC5200C4C589 /* Spinner.swift */; };
+		680F79C822D5F41B00C4C589 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C722D5F41B00C4C589 /* PrimaryButton.swift */; };
+		680F79CA22D5F50E00C4C589 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C922D5F50E00C4C589 /* SecondaryButton.swift */; };
 		685B9CF022CA941A00547C32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */; };
-		685B9CF322CA9CAA00547C32 /* UIViewController+Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */; };
 		685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF422CAA2A900547C32 /* HabitsViewController.swift */; };
 		685B9CF722CE72E200547C32 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF622CE72E200547C32 /* HabitsViewModel.swift */; };
 		685B9CF922CE72FF00547C32 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF822CE72FF00547C32 /* HabitViewModel.swift */; };
@@ -52,8 +54,10 @@
 		6803ACD022C8E0A7001899CF /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		680F79BF22D26E1700C4C589 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		680F79C322D4D24D00C4C589 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		680F79C522D5DC5200C4C589 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		680F79C722D5F41B00C4C589 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		680F79C922D5F50E00C4C589 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
 		685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Spinner.swift"; sourceTree = "<group>"; };
 		685B9CF422CAA2A900547C32 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		685B9CF622CE72E200547C32 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
 		685B9CF822CE72FF00547C32 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
@@ -136,12 +140,12 @@
 				688EBDDA22C902C30079C2B8 /* RegistrationViewController.xib */,
 				685B9CF422CAA2A900547C32 /* HabitsViewController.swift */,
 				685B9CFE22CE745400547C32 /* HabitsViewController.xib */,
+				685B9D0C22CE85F100547C32 /* HabitViewController.swift */,
+				685B9D0E22CE861100547C32 /* HabitViewController.xib */,
 				685B9D0422CE820000547C32 /* NewHabitViewController.swift */,
 				685B9D0622CE823600547C32 /* NewHabitViewController.xib */,
 				685B9D0822CE858500547C32 /* SettingsViewController.swift */,
 				685B9D0A22CE85B000547C32 /* SettingsViewController.xib */,
-				685B9D0C22CE85F100547C32 /* HabitViewController.swift */,
-				685B9D0E22CE861100547C32 /* HabitViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +155,8 @@
 			children = (
 				685B9CFA22CE731F00547C32 /* HabitTableViewCell.swift */,
 				685B9CFC22CE733100547C32 /* HabitTableViewCell.xib */,
+				680F79C722D5F41B00C4C589 /* PrimaryButton.swift */,
+				680F79C922D5F50E00C4C589 /* SecondaryButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +184,7 @@
 				6803ACD022C8E0A7001899CF /* UIUtils.swift */,
 				685B9D1222D0C20F00547C32 /* AuthenticationUtils.swift */,
 				680F79C322D4D24D00C4C589 /* DateUtils.swift */,
+				680F79C522D5DC5200C4C589 /* Spinner.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,7 +192,6 @@
 		685B9CF122CA9C5900547C32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				685B9CF222CA9CAA00547C32 /* UIViewController+Spinner.swift */,
 				685B9D1822D0F7AC00547C32 /* UIViewController+TopMostController.swift */,
 				685B9D1A22D0F88100547C32 /* UIApplication+TopMostController.swift */,
 			);
@@ -340,9 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				680F79CA22D5F50E00C4C589 /* SecondaryButton.swift in Sources */,
 				6803ACD122C8E0A7001899CF /* UIUtils.swift in Sources */,
 				685B9D0322CE7F8000547C32 /* Habit.swift in Sources */,
-				685B9CF322CA9CAA00547C32 /* UIViewController+Spinner.swift in Sources */,
 				6803ACB322C8D775001899CF /* LoginViewController.swift in Sources */,
 				685B9CF922CE72FF00547C32 /* HabitViewModel.swift in Sources */,
 				685B9CFB22CE731F00547C32 /* HabitTableViewCell.swift in Sources */,
@@ -350,6 +356,7 @@
 				6803ACB122C8D775001899CF /* AppDelegate.swift in Sources */,
 				685B9D0522CE820000547C32 /* NewHabitViewController.swift in Sources */,
 				6803ACCE22C8DD88001899CF /* RegistrationViewController.swift in Sources */,
+				680F79C622D5DC5200C4C589 /* Spinner.swift in Sources */,
 				685B9D1922D0F7AC00547C32 /* UIViewController+TopMostController.swift in Sources */,
 				685B9D0D22CE85F100547C32 /* HabitViewController.swift in Sources */,
 				685B9CF722CE72E200547C32 /* HabitsViewModel.swift in Sources */,
@@ -358,6 +365,7 @@
 				685B9D0922CE858600547C32 /* SettingsViewController.swift in Sources */,
 				685B9D1322D0C20F00547C32 /* AuthenticationUtils.swift in Sources */,
 				680F79C422D4D24D00C4C589 /* DateUtils.swift in Sources */,
+				680F79C822D5F41B00C4C589 /* PrimaryButton.swift in Sources */,
 				685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */,
 				68BCC85422D236E5009498CE /* FirebaseManager.swift in Sources */,
 			);
