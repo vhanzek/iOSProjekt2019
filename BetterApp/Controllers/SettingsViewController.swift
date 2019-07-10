@@ -111,21 +111,6 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let sectionHeaderView = UILabel()
-//        sectionHeaderView.backgroundColor = .white
-//
-//        switch SectionHeader.allCases[section] {
-//        case SectionHeader.account:
-//            sectionHeaderView.text = SectionHeader.account.rawValue
-//        case SectionHeader.userSettings:
-//            sectionHeaderView.text = SectionHeader.userSettings.rawValue
-//        }
-//
-//        sectionHeaderView.textAlignment = .center
-//        sectionHeaderView.textColor = UIUtils.colorVistaBlue
-//        sectionHeaderView.font = UIFont.boldSystemFont(ofSize: 12)
-//
-//        return sectionHeaderView
         return SettingsSectionHeader(title: SectionHeader.allCases[section].rawValue)
     }
     

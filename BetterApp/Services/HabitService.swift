@@ -13,10 +13,11 @@ class HabitService {
         let habitsRef = FirebaseManager.shared.getCurrentUserHabitsReference()
         
         // Fetch habits
-        habitsRef.queryOrdered(byChild: "timestamp").observeSingleEvent(of: .value, with: { (snapshot) in
+        habitsRef.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let values = snapshot.value as? [String: NSDictionary] {
                 let habits = values.compactMap(Habit.init)
+                    .sorted(by: { $0.timestamp > $1.timestamp })
                 completion(habits)
             } else {
                 completion([])

@@ -18,12 +18,8 @@ class HabitsViewController: UIViewController {
     private var refreshControl: UIRefreshControl!
     
     private var showAll: Bool {
-        get {
-            return tablePreview.selectedSegmentIndex == 0
-        }
-        set {
-            self.refresh()
-        }
+        get { return tablePreview.selectedSegmentIndex == 0 }
+        set { self.refresh() }
     }
     
     convenience init(viewModel: HabitsViewModel) {
@@ -114,7 +110,7 @@ extension HabitsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if !showAll {
             let category = viewModel!.currentCategories[section]
-            return TableSectionHeader(title: category.name)
+            return HabitsSectionHeader(title: category.name)
         }
         return nil
     }

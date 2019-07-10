@@ -53,13 +53,15 @@ class Habit {
     var frequency: Frequency
     var repeating: Int
     var daysDone: [Date: String]
+    var timestamp: Int64
     
     init?(habit: Any) {
         if let (id, habit) = habit as? (String, NSDictionary) {
             if let title = habit["title"] as? String,
                let category = habit["category"] as? String,
                let frequency = habit["frequency"] as? String,
-               let repeating = habit["repeating"] as? Int {
+               let repeating = habit["repeating"] as? Int,
+               let timestamp = habit["timestamp"] as? Int64 {
             
                 self.id = id
                 self.title = title
@@ -67,6 +69,7 @@ class Habit {
                 self.frequency = Frequency(rawValue: frequency) ?? Frequency.daily
                 self.repeating = repeating
                 self.daysDone = [:]
+                self.timestamp = timestamp
                 
                 if let daysDone = habit["days_done"] as? [String: String] {
                     daysDone.forEach { [weak self] (dateID, date) in

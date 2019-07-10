@@ -8,7 +8,7 @@
 import UIKit
 import PureLayout
 
-class TableSectionHeader: UIView {
+class HabitsSectionHeader: UIView {
     
     var titleLabel: UILabel!
     
