@@ -34,7 +34,7 @@ class SecondaryButton: UIButton {
     
     func setup() {
         self.clipsToBounds = true
-        self.layer.cornerRadius = 3
+        self.layer.cornerRadius = 5
         self.layer.borderColor = UIUtils.colorVistaBlue.cgColor
         self.layer.borderWidth = 1.0
     }

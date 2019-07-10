@@ -108,13 +108,17 @@ class UIUtils {
     static func switchToHabitsController() {
         let habitsViewController = UINavigationController(rootViewController: HabitsViewController(viewModel: HabitsViewModel()))
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.setRootViewController(viewController: habitsViewController)
+        UIView.transition(with: appDelegate.window ?? UIWindow(), duration: 0.5, options: .transitionCrossDissolve, animations: {
+            appDelegate.setRootViewController(viewController: habitsViewController)
+        }, completion: nil)
     }
     
     static func switchToLoginController() {
         let loginViewController = LoginViewController()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.setRootViewController(viewController: loginViewController)
+        UIView.transition(with: appDelegate.window ?? UIWindow(), duration: 0.5, options: .transitionCrossDissolve, animations: {
+            appDelegate.setRootViewController(viewController: loginViewController)
+        }, completion: nil)
     }
     
     static func getRootViewController() -> UIViewController {

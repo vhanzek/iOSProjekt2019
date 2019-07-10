@@ -15,27 +15,57 @@ class NewHabitViewController: UIViewController {
     @IBOutlet weak var frequencySegmentedControl: UISegmentedControl!
     @IBOutlet weak var numberOfTimesTextField: UITextField!
     @IBOutlet weak var categoryName: UILabel!
+    @IBOutlet weak var repeatingLabel: UILabel!
+    @IBOutlet weak var repeatingStepper: UIStepper!
     
+    
+    @IBAction func frequencySelected(_ sender: Any) {
+        let numberOfTimes = String(format:"%.0f", repeatingStepper.value)
+
+        var frequency = "day"
+        switch frequencySegmentedControl.selectedSegmentIndex {
+        case 0:
+            frequency = "day"
+        case 1:
+            frequency = "week"
+        case 2:
+            frequency = "month"
+        default:
+            frequency = "day"
+        }
+
+        if (numberOfTimes == "1") {
+            repeatingLabel.text = "Repeat 1 time a " + frequency
+        } else {
+            repeatingLabel.text = "Repeat " + numberOfTimes + " times a " + frequency
+        }
+    }
+    
+    @IBAction func stepperTapped(_ sender: Any) {
+        let numberOfTimes = String(format:"%.0f", repeatingStepper.value)
+        
+        var frequency = "day"
+        switch frequencySegmentedControl.selectedSegmentIndex {
+        case 0:
+            frequency = "day"
+        case 1:
+            frequency = "week"
+        case 2:
+            frequency = "month"
+        default:
+            frequency = "day"
+        }
+        
+        if (numberOfTimes == "1") {
+            repeatingLabel.text = "Repeat 1 time a " + frequency
+        } else {
+            repeatingLabel.text = "Repeat " + numberOfTimes + " times a " + frequency
+        }
+        
+    }
     
     @IBAction func categorySelected(_ sender: Any) {
-        switch categoriesSegmentedControl.selectedSegmentIndex {
-        case 0:
-            categoryName.text = Category.health.rawValue
-        case 1:
-            categoryName.text = Category.fitness.rawValue
-        case 2:
-            categoryName.text = Category.selfDevelopment.rawValue
-        case 3:
-            categoryName.text = Category.household.rawValue
-        case 4:
-            categoryName.text = Category.efficiency.rawValue
-        case 5:
-            categoryName.text = Category.social.rawValue
-        case 6:
-            categoryName.text = Category.other.rawValue
-        default:
-            categoryName.text = ""
-        }
+        categoryName.text = Category.allCases[categoriesSegmentedControl.selectedSegmentIndex].rawValue
     }
     
     override func viewDidLoad() {
