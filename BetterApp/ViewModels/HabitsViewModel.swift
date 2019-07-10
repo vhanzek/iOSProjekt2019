@@ -49,7 +49,7 @@ class HabitsViewModel {
     }
     
     public var currentCategories: [Category] {
-        return Array(Set(habits?.map{$0.category} ?? []))
+        return ArrayUtils.unique(source: habits?.map{$0.category} ?? [])
     }
     
     public func habitViewModel(forIndexPath indexPath: IndexPath, showAll: Bool) -> HabitViewModel? {

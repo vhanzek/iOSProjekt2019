@@ -18,6 +18,8 @@
 		680F79C622D5DC5200C4C589 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C522D5DC5200C4C589 /* Spinner.swift */; };
 		680F79C822D5F41B00C4C589 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C722D5F41B00C4C589 /* PrimaryButton.swift */; };
 		680F79CA22D5F50E00C4C589 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79C922D5F50E00C4C589 /* SecondaryButton.swift */; };
+		680F79D222D6295700C4C589 /* ArrayUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79D122D6295700C4C589 /* ArrayUtils.swift */; };
+		680F79D422D6325F00C4C589 /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680F79D322D6325F00C4C589 /* TableSectionHeader.swift */; };
 		685B9CF022CA941A00547C32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */; };
 		685B9CF522CAA2A900547C32 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF422CAA2A900547C32 /* HabitsViewController.swift */; };
 		685B9CF722CE72E200547C32 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B9CF622CE72E200547C32 /* HabitsViewModel.swift */; };
@@ -57,6 +59,8 @@
 		680F79C522D5DC5200C4C589 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		680F79C722D5F41B00C4C589 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		680F79C922D5F50E00C4C589 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		680F79D122D6295700C4C589 /* ArrayUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayUtils.swift; sourceTree = "<group>"; };
+		680F79D322D6325F00C4C589 /* TableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
 		685B9CEF22CA941A00547C32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		685B9CF422CAA2A900547C32 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		685B9CF622CE72E200547C32 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				685B9CFC22CE733100547C32 /* HabitTableViewCell.xib */,
 				680F79C722D5F41B00C4C589 /* PrimaryButton.swift */,
 				680F79C922D5F50E00C4C589 /* SecondaryButton.swift */,
+				680F79D322D6325F00C4C589 /* TableSectionHeader.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				6803ACD022C8E0A7001899CF /* UIUtils.swift */,
 				685B9D1222D0C20F00547C32 /* AuthenticationUtils.swift */,
 				680F79C322D4D24D00C4C589 /* DateUtils.swift */,
+				680F79D122D6295700C4C589 /* ArrayUtils.swift */,
 				680F79C522D5DC5200C4C589 /* Spinner.swift */,
 			);
 			path = Utils;
@@ -347,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				680F79CA22D5F50E00C4C589 /* SecondaryButton.swift in Sources */,
+				680F79D422D6325F00C4C589 /* TableSectionHeader.swift in Sources */,
 				6803ACD122C8E0A7001899CF /* UIUtils.swift in Sources */,
 				685B9D0322CE7F8000547C32 /* Habit.swift in Sources */,
 				6803ACB322C8D775001899CF /* LoginViewController.swift in Sources */,
@@ -354,6 +361,7 @@
 				685B9CFB22CE731F00547C32 /* HabitTableViewCell.swift in Sources */,
 				685B9D1622D0F5FC00547C32 /* HabitService.swift in Sources */,
 				6803ACB122C8D775001899CF /* AppDelegate.swift in Sources */,
+				680F79D222D6295700C4C589 /* ArrayUtils.swift in Sources */,
 				685B9D0522CE820000547C32 /* NewHabitViewController.swift in Sources */,
 				6803ACCE22C8DD88001899CF /* RegistrationViewController.swift in Sources */,
 				680F79C622D5DC5200C4C589 /* Spinner.swift in Sources */,
