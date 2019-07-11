@@ -17,7 +17,7 @@ class Spinner {
         if spinner == nil, let window = UIApplication.shared.keyWindow {
             let frame = UIScreen.main.bounds
             spinner = UIActivityIndicatorView(frame: frame)
-            spinner!.backgroundColor = UIUtils.colorVistaBlue.withAlphaComponent(0.6)
+            spinner!.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
             spinner!.style = .whiteLarge
             window.addSubview(spinner!)
             spinner!.startAnimating()

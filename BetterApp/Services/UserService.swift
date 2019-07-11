@@ -43,6 +43,29 @@ class UserService {
         }
     }
     
+    func changeEmail(oldEmail: String?, newEmail: String?, confirmEmail: String?, completion: @escaping ((Error?) -> Void)) {
+        if let old = oldEmail, let new = newEmail, let confirmNew = confirmEmail {
+            if (!old.isEmpty && !new.isEmpty && !confirmNew.isEmpty) {
+                if (new == confirmNew) {
+                    if let user = AuthenticationUtils.getCurrentUser() {
+                        user.updateEmail(to: new) { (error) in
+                            if let error = error {
+                                UIUtils.showError(message: error.localizedDescription)
+                            } else {
+                                UIUtils.showSuccess(message: "Email successfully changed!")
+                                FirebaseManager.shared.getCurrentUserReference().setValue(new)
+                            }
+                        }
+                    }
+                } else {
+                    UIUtils.showError(message: "Email don't match!")
+                }
+            }  else {
+                UIUtils.showError(message: "Field must not be empty!")
+            }
+        }
+    }
+    
     func deleteAccount() {
         FirebaseManager.shared.getCurrentUserReference().removeValue { error, _ in
             if let error = error {

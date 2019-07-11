@@ -9,7 +9,6 @@ import UIKit
 
 class NewHabitViewController: UIViewController {
     
-    @IBOutlet weak var repeatingContentView: UIStackView!
     @IBOutlet weak var newHabitNameTextField: UITextField!
     @IBOutlet weak var categoriesSegmentedControl: UISegmentedControl!
     @IBOutlet weak var frequencySegmentedControl: UISegmentedControl!

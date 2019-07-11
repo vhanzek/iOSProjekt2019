@@ -81,6 +81,8 @@ class UIUtils {
             
             if field == "password" {
                 UserService().changePassword(oldPassword: old, newPassword: new, confirmPassword: confirmNew, completion: { (_) in })
+            } else {
+                UserService().changeEmail(oldEmail: old, newEmail: new, confirmEmail: confirmNew, completion: { (_) in })
             }
         }
         
