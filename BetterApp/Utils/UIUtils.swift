@@ -88,16 +88,21 @@ class UIUtils {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
         
+        var isSecureTextEntry = false
+        if field == "password" {
+            isSecureTextEntry = true
+        }
+        
         alertController.addTextField { (textField) in
-            textField.isSecureTextEntry = true
+            textField.isSecureTextEntry = isSecureTextEntry
             textField.placeholder = "Enter old " + field
         }
         alertController.addTextField { (textField) in
-            textField.isSecureTextEntry = true
+            textField.isSecureTextEntry = isSecureTextEntry
             textField.placeholder = "Enter new " + field
         }
         alertController.addTextField { (textField) in
-            textField.isSecureTextEntry = true
+            textField.isSecureTextEntry = isSecureTextEntry
             textField.placeholder = "Confirm new " + field
         }
         
